@@ -22,6 +22,7 @@
     <title>Ball / Call</title>
 </head>
 
+<body>
     <header>Ball / Call</header>
     <div class="drawing-area">
         <div class="text-area">Lets take a ball...</div>
@@ -29,38 +30,36 @@
     </div>
 
     <div id="app">
-            <h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
 
-            <input type="number" v-model="myFontSize">
-            <div :style="{border: 'solid 2px black', 'margin-bottom': '30px', fontSize: myFontSize + 'px'}">
-                JS object literal bound to style attribute
-            </div>
-            
-            <div :style="fancyDiv">
-                object literal in data bound to style attribute
-            </div>
-            
-            <div :style="[fancyDiv, fancierDiv]" 
-                @mouseover="fancierDiv.border = 'dashed 1px blue'"
-                @mouseout="fancierDiv.border = 'solid 1px black'"
-                >
-                multiple objects bound to style attribute
-            </div>
+        <input type="number" v-model="myFontSize">
+        <div :style="{border: 'solid 2px black', 'margin-bottom': '30px', fontSize: myFontSize + 'px'}">
+            JS object literal bound to style attribute
+        </div>
 
-            <input type="number" v-model="radiusNumber">
-            <input type="number" v-model="sizeNumber">
-            <!-- <div  :style="{ 'background-color': 'hsl( ' + hueNumber + '%, 50%, 80%)' ,  'margin-bottom' :'30px' ,'width':'100px', 'height' : '100px' }"> </div> -->
-            <div :style="{ 'background-color':'red', 'width': sizeNumber+ 'px', 'height' : sizeNumber + 'px', 'border-radius': radiusNumber+'px'}" > hi</div>
-            <input type="number" v-model="hueNumber">
-            <input type="number" v-model="satNumber">
-            <input type="number" v-model="lightNumber">
-            <div :style="{ 'width':'100px' , 'height':'100px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
-            <!-- 'hsl(' +hueNumber+', '+'100 %, 66%)' -->
-            <div class="square" :class="{blue: cold, red: hot}"></div>
-            <div :class="cssClasses"></div>
-            <input type="text" v-model="bgColorClass">
-            <div :class="[squareClass, bgColorClass, {'dashed-border': selected}]"></div>
-        
+        <div :style="fancyDiv">
+            object literal in data bound to style attribute
+        </div>
+
+        <div :style="[fancyDiv, fancierDiv]" @mouseover="fancierDiv.border = 'dashed 1px blue'" @mouseout="fancierDiv.border = 'solid 1px black'">
+            multiple objects bound to style attribute
+        </div>
+
+        <input type="number" v-model="radiusNumber">
+        <input type="number" v-model="sizeNumber">
+        <!-- <div  :style="{ 'background-color': 'hsl( ' + hueNumber + '%, 50%, 80%)' ,  'margin-bottom' :'30px' ,'width':'100px', 'height' : '100px' }"> </div> -->
+        <div :style="{ 'background-color':'red', 'width': sizeNumber+ 'px', 'height' : sizeNumber + 'px', 'border-radius': radiusNumber+'px'}">
+        hi</div>
+        <input type="number" v-model="hueNumber">
+        <input type="number" v-model="satNumber">
+        <input type="number" v-model="lightNumber">
+        <div :style="{ 'width':'100px' , 'height':'100px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
+        <!-- 'hsl(' +hueNumber+', '+'100 %, 66%)' -->
+        <div class="square" :class="{blue: cold, red: hot}"></div>
+        <div :class="cssClasses"></div>
+        <input type="text" v-model="bgColorClass">
+        <div :class="[squareClass, bgColorClass, {'dashed-border': selected}]"></div>
+
     </div>
 
 
