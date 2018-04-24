@@ -12,10 +12,109 @@
     --color-header:transparent;
 } 
 
+/* Colour quiz created by Lydia Douglas 2018 */
+
+/* This quiz has been created to be extendable in the future*/
+
+/* There is a landing section, main quiz area, results section and footer*/
+
+/* The questions and answers are displayed in the card. The card, button and 
+other helper classes class allows for unified look and feel as well as maikng 
+it easier to change layout in future*/
+
+/*Alhough this site does not have complete responsive design implementation 
+most of the layout has been designed to allow the site to scale.
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*---------------------Setting up grid--(this grid comes fro W3Schools)---------------------------------*/
+
+div[class*='col-'] {
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+}
+
+div[class*='col-']>img {
+    cursor: pointer;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.row {
+    margin: 5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-6>img {
+    cursor: pointer;
+}
+
+/*----------------------end setting up grid----------------------------------*/
+
 
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-size);
+    background: var(--color-backgd);
 }
 
 header{

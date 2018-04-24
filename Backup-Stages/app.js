@@ -43,8 +43,7 @@ function init() {
             selected: true,
 
             expcircleClass: 'expcircle',
-
-           
+            
             circleRadius: 200,
             radiusNumber:130,
             sizeNumber:260,
