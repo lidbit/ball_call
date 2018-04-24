@@ -1,6 +1,7 @@
  :root{
     --color-backgd: hsl(180, 22%, 66%);
     --color-backgd-dk: hsl(180, 22%, 36%) ;
+    --color-nonview: lightgrey;
     --color-border: black;
     --color-ball: pink;
     --text-color: black;
@@ -127,7 +128,7 @@ header{
     height:10vh;
     background-color: var( --color-backgd);
 }
-
+/* non view */
 .drawing-area{
     position: relative;
     width: 1280px;
