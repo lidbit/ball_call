@@ -46,7 +46,7 @@ function init() {
 
     };
     // slider component wip
-    Vue.component('button-counter', {
+    Vue.component('hue-table', {
         data: function() {
             return {
                 count: 0,
@@ -62,7 +62,45 @@ function init() {
                 ]
             }
         },
-        template: '<div id="huetable"><table class="tableslider"><tbody><tr v-for="item in items"><td>{{ item.message }}</td></tr></div>'
+        template: '<div id="huetable"><table class="tableslider"><tbody><tr><td v-for="item in items">{{ item.message }}</td></tr></div>'
+            // template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    });
+    Vue.component('saturation-table', {
+        data: function() {
+            return {
+                count: 0,
+                items: [{
+                        message: "one"
+                    },
+                    {
+                        message: "two"
+                    },
+                    {
+                        message: "three"
+                    },
+                ]
+            }
+        },
+        template: '<div id="saturationtable"><table class="tableslider"><tbody><tr><td v-for="item in items">{{ item.message }}</td></tr></div>'
+            // template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+    });
+    Vue.component('lightness-table', {
+        data: function() {
+            return {
+                count: 0,
+                items: [{
+                        message: "one"
+                    },
+                    {
+                        message: "two"
+                    },
+                    {
+                        message: "three"
+                    },
+                ]
+            }
+        },
+        template: '<div id="lightnesstable"><table class="tableslider"><tbody><tr><td v-for="item in items">{{ item.message }}</td></tr></div>'
             // template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
     });
 
