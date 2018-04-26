@@ -1,16 +1,32 @@
 // $(document).scrollTop()
 // $(window).height()
 // $(document).height()
+
+var $wsection = $("#welcome-section");
+
+
 $(document).ready(function () {
   'use strict';
-  var $grid=$('#id'),
-    $lists = $grid.find('li');
 
-    $lists.css('background', '#333');
-    $lists.animate({width:'+=100'}, 2000);
-    $lists.fadeOut();
-    $lists.fadeIn('slow');
+  var $alltexts = $("#welcome-section").find('span');
+  //$alltexts.hide();
+
+  showSection(1);
+
+  //fadeIn('slow'); 
+  // var $grid=$('#id'),
+  //   $lists = $grid.find('li');
+
+  //   $lists.css('background', '#333');
+  //   $lists.animate({width:'+=100'}, 2000);
+  //   $lists.fadeOut();
+  //   $lists.fadeIn('slow');
+
+  function showSection(num) {
+    $("#welcome-text span:nth-child(" + num + ")").show();
+  }
 });
+
 // this is a scroll event handler - will be called whenever the user
 // scrolls the document
 $(document).scroll( function() {
@@ -23,7 +39,7 @@ $(document).scroll( function() {
   // half-way)
 
 	var percent = $(document).scrollTop() / ($(document).height() - $(window).height());
-  
+  console.log("percentage scroll value " + percent );
   // once we have a percent we want to convert it to a number out of 255
   // because we want to use it in the css rgb() 
   // to do this, we multiply percent by 255 (which gives us a number

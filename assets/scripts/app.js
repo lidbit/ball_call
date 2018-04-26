@@ -16,9 +16,7 @@ function init() {
     new Vue({
         el: '#app',
         data: {
-            msg: 'Hello from Vue! Baby!',
-            myFontSize: 24,
-            
+
             fancyDiv: {
                 backgroundColor: 'lightgrey',
                 borderRadius: '10px',
@@ -44,13 +42,12 @@ function init() {
 
             expcircleClass: 'expcircle',
 
-           
             circleRadius: 200,
-            radiusNumber:130,
-            sizeNumber:260,
-            satNumber:50,
-            hueNumber:130,
-            lightNumber:50
+            radiusNumber: 130,
+            sizeNumber: 260,
+            satNumber: 50,
+            hueNumber: 130,
+            lightNumber: 50
 
         }
     });
