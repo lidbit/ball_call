@@ -70,18 +70,29 @@ function init() {
             return {
                 count: 0,
                 items: [{
-                        message: "one"
+                        message: "one",
+                        value: 0,
+                        color: '#111'
                     },
                     {
-                        message: "two"
+                        message: "two",
+                        value: 25,
+                        color: '#222'
                     },
                     {
-                        message: "three"
+                        message: "three",
+                        value: 50,
+                        color: '#555'
+                    },
+                    {
+                        message: "three",
+                        value: 100,
+                        color: '#999'
                     },
                 ]
             }
         },
-        template: '<div id="saturationtable"><table class="tableslider"><tbody><tr><td v-for="item in items">{{ item.message }}</td></tr></div>'
+        template: '<div id="saturationtable"><table class="tableslider"><tbody><tr><td v-bind:style="{ \'background-color\': item.color }" v-for="item in items">{{ item.message }}</td></tr></div>'
             // template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
     });
     Vue.component('lightness-table', {
