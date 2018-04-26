@@ -5,7 +5,7 @@
 /*** declare global variables **/
 
 //calling init function
-$(document).ready(function () {
+$(document).ready(function() {
     init();
 });
 
@@ -53,8 +53,3 @@ function init() {
     });
 
 }
-
-
-
-
-
