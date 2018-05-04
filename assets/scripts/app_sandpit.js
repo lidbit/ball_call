@@ -9,9 +9,10 @@ $(document).ready(function () {
   'use strict';
 
   var $alltexts = $("#welcome-section").find('span');
-  //$alltexts.hide();
+  $alltexts.hide();
 
-  showSection(1);
+  showSection(1,5000);
+  showSection(2,8000);
 
   //fadeIn('slow'); 
   // var $grid=$('#id'),
@@ -22,10 +23,12 @@ $(document).ready(function () {
   //   $lists.fadeOut();
   //   $lists.fadeIn('slow');
 
-  function showSection(num) {
-    $("#welcome-text span:nth-child(" + num + ")").show();
-  }
 });
+
+
+function showSection(num, time) {
+  $("#welcome-text span:nth-child(" + num + ")").fadeIn(time);
+}
 
 // this is a scroll event handler - will be called whenever the user
 // scrolls the document
