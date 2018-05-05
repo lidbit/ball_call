@@ -1,31 +1,39 @@
+ 
+/* Circle/Ball app created by Lydia Douglas 2018 */
+
+/* This ia a playful app created in cooperation with my daughter(6years)
+ It is meant to ceducate in cretive fun way
+ She is starting to read and work with larger numbers (hundreds)
+ 
+ This app is meant to tap into kids curiousity and while they have fun pick up 
+ a few skills on the way (well it was fun for me too)*/
+
+/* Everything revolves around a rhyme(short small words)
+    the animations and interaction support the words in rhyme
+    the ball color/size change- made her try larger numbers 
+    - she kept coming back to it many many times*/
+ 
  :root{
-    --color-backgd: hsl(180, 26%, 74%);
-    --color-backgd-dk: hsl(180, 22%, 36%) ;
-    --color-nonview: lightgrey;
+    /* --color-backgd: hsl(180, 26%, 74%); */
+    /* --color-backgd-dk: hsl(180, 22%, 36%) ; */
+    --color-nonview: hsl(40, 6%, 91%);
     --color-border: black;
     --color-ball: pink;
-    --text-color: black;
-    --ball-gradient-lt: rgb(202, 170, 161);
-    --ball-gradient-dk: rgb(139, 37, 71) ;
+    --color-ball-top-ref: pink;
+    --color-ball-bot-ref: pink;
+    --text-color: hsl(214, 57%, 25%);
+    --ball-gradient-lt:  hsl(0, 0%, 50%);
+    --ball-gradient-dk: hsl(0, 10%, 20%);
     --ball-shadow:hsl(180, 22%, 26%);
-    --color-footer: darkgrey;
-    --font-size: 44px;
+    --color-footer: hsl(40, 6%, 91%);
+    --font-size: 18px;
     --color-header:transparent;
+
+    --font-playful: 'Gochi Hand';
+    --font-cursive: 'Caveat';
+    --font-choppy: 'Short Stack';
+    --color-backgrd: rgb(250, 184, 179);
 } 
-
-/* Colour quiz created by Lydia Douglas 2018 */
-
-/* This quiz has been created to be extendable in the future*/
-
-/* There is a landing section, main quiz area, results section and footer*/
-
-/* The questions and answers are displayed in the card. The card, button and 
-other helper classes class allows for unified look and feel as well as maikng 
-it easier to change layout in future*/
-
-/*Alhough this site does not have complete responsive design implementation 
-most of the layout has been designed to allow the site to scale.
-*/
 
 html {
     box-sizing: border-box;
@@ -95,9 +103,9 @@ div[class*='col-']>img {
     width: 100%;
 }
 
-.row {
+/* .row {
     margin: 5px;
-}
+} */
 
 .row:after {
     content: "";
@@ -108,26 +116,83 @@ div[class*='col-']>img {
 .col-6>img {
     cursor: pointer;
 }
-
-/*----------------------end setting up grid----------------------------------*/
+/* set up columns */
 
 
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: var(--font-size);
-    background: var(--color-backgd);
+    background-color: var(--color-nonview);
+    height: 100%;
+    width:100%;
+    font-family: var(--font-choppy), Var(--font-playful), cursive,'Courier New', Courier, monospace;
 }
 
 header{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size:1.1em;
-    padding-top:1%;
-    padding-right:1%;
+    font-size:3.1em;
+    padding:1.5%;
     color:lightcoral;
     text-align: right;
-    height:10vh;
+    height:100px;
     background-color: var( --color-backgd);
+  }
+
+  
+  #welcome-section{
+  width:100%;
+  height:90%;
+  background-color: var(--color-backgrd) ; 
+  /* background-color:green; */
+  }
+  .lets-text{
+    font-family: var(--font-choppy);
+    font-size: 3.5em;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    text-align:center;
+    color:var(--text-color);
+    /* background-color:blue; */
+    display: flex;
+    padding:1.6%;
+    padding-top:3%;
+  }
+
+.textright{
+    text-align: right;
 }
+textleft{
+    text-align: left;
+}
+
+
+  .action-call-text{
+    font-family:var(--font-cursive);
+    font-size:4em;
+    font-weight:600;
+    text-align: right;
+    padding-right:10%;
+  }
+  #jball-section, #action-section {
+      background-color: var(--color-backgrd);
+  }
+
+  #jball-wrapper{
+    display:flex; 
+    width:100%;
+    height:580px;
+    /* background-color:yellow; */
+  }
+  #jball{
+    width:300px;
+    height:300px;
+    border-radius: 150px;
+    background-color:var(--color-nonview);
+    border: 8px;
+    border-color: var(--color-border);
+    display: inline-block;
+  }
+
+
 /* non view */
 /* .drawing-area{
     position: relative;
@@ -145,7 +210,7 @@ header{
     padding:10px;
 } */
 
-.circle{
+/* .circle{
     
     top:40%;
     left:40%;
@@ -157,9 +222,9 @@ header{
     background-color: var(--color-ball);
     border-color: var(--color-border);
     /* background:radial-gradient(transparent, pink); */
-    background:radial-gradient(var(--ball-gradient-lt),var(--ball-gradient-dk) );  
+   /* background:radial-gradient(var(--ball-gradient-lt),var(--ball-gradient-dk) );  
     box-shadow: 3px 3px 3px var(--ball-shadow) ;
-}
+} */
 
 
 /* #colortry {
@@ -215,7 +280,7 @@ header{
     margin: 0;
     border-radius: 50%;
     position: relative;
-    background: radial-gradient(circle at 50% 120%, #613131, #812727 80%, #791010 100%);
+    background: radial-gradient(circle at 50% 120%, #314461, #628694 80%, #266e85 100%);
   }
   .ball:before {
     content: "";
@@ -242,6 +307,7 @@ header{
     transform: translateX(-28%) translateY(-32%) skewX(-20deg);
     filter: blur(10px);
   }
+  /* colour ball section */
   
 footer{
     height:10vh;
@@ -249,5 +315,23 @@ footer{
 }
 
 
-/* experiments */
+  
+  /* font-family: 'Caveat', cursive;
+  
+  font-family: 'La Belle Aurore', cursive;
+  
+  font-family: 'League Script', cursive;
+  
+  font-family: 'Sacramento', cursive;
+  
+  font-family: 'Indie Flower', cursive;
+  
+  font-family: 'Handlee', cursive; */
+  
+  
+
+  
+  
+  
+
    
