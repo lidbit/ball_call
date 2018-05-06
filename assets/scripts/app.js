@@ -27,7 +27,7 @@ function init() {
 
     //hide sections
     $(".action-call-text").hide();
-    $("#colour-section").hide();
+    //$("#colour-section").hide();
     
 // animate the welcome section
     var welcome=$("#welcome-text");

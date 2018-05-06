@@ -33,22 +33,34 @@
 
 <body>
     <!-- using animate.css3 libary -->
-    <header class="animated shake">Ball / Call</header>
+    <header id="header-panel">
+        <!--  -->
+        <!-- <section id="orient-panel">  -->
+                <button id="b-small" class="b-action">Small</button>
+                <button id="b-hole" class="b-action">Hole</button>
+                <button id="b-tall" class="b-action">Tall</button>
+                <button id="b-colour" class="b-action">Colour Call</button>
+                <button id="b-troll" class="b-action">Troll</button>
+                <button id="b-hall" class="b-action">Hall</button>
+                <button id="b-repeat" class="b-action">Repeat All</button>
+    
+        <div id="app-name"><a href="./" class="animated shake" >Ball/Call</a> </div>  
+        <!-- </section> -->
+    </header>
+    
 
-    <section id="welcome-section" class="row">
-        <div class="col-12">
+    <section id="welcome-section" >
             <div id="welcome-text" class="lets-text">
                 <div class="textright"><span id="lets-span">Lets take a   </span></div>
                 <div class ="textleft">
                     <span id="circle-span">circle</span>
-                    <span id="ball-span">ball</span>
-                    <span id="dots-span">...</span>
+                    <span id="ball-span" class="hidden">ball</span>
+                    <span id="dots-span" class="hidden">...</span>
                 </div> 
             </div>
-        </div>
     </section>
 
-    <section id="action-section" class="row">
+    <section id="action-section" class="hidden">
         <div class="col-12">
                 <div id="text">
                     <p id="small-text" class="action-call-text">And make it small</p>
@@ -62,7 +74,7 @@
                 </div>
         </div>
     </section>
-    <section id="jball-section" class="row">
+    <section id="jball-section" class="hidden">
         <div class="col-1"></div>    
         <div class="col-10">
             <div id="jball"></div>
@@ -70,7 +82,7 @@
         <div class="col-1"></div>
     </section>
 
-    <section id="colour-section">
+    <section id="colour-section" >
         <div id="app">
             <div id="controls-panel">
                 <input type="number" v-model="radiusNumber">
@@ -95,15 +107,6 @@
         </div>  
         </section>
 
-        <section>
-            <button id="b-small" class="b-action">Small</button>
-            <button id="b-hole" class="b-action">Hole</button>
-            <button id="b-tall" class="b-action">Tall</button>
-            <button id="b-colour" class="b-action">Colour Call</button>
-            <button id="b-troll" class="b-action">Troll</button>
-            <button id="b-hall" class="b-action">Hall</button>
-            <button id="b-repeat" class="b-action">Repeat All</button>
-        </section>
         <!-- end view block -->
         <footer id="footer" role="contentinfo">
             <p>&copy; copyright Lydia Douglas. 2018</p>
