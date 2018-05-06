@@ -12,9 +12,9 @@ $(document).ready(function () {
 function init() {
     //data to be used in the view for the ball color call
     var data = {
-        circleRadius: 200,
-        radiusNumber: 130,
-        sizeNumber: 260,
+        circleRadius: 400,
+        radiusNumber: 400,
+        sizeNumber: 400,
         satNumber: 50,
         hueNumber: 300,
         lightNumber: 50
@@ -27,7 +27,7 @@ function init() {
 
     //hide sections
     $(".action-call-text").hide();
-    //$("#colour-section").hide();
+    $("#colour-section").hide();
     
 // animate the welcome section
     var welcome=$("#welcome-text");
@@ -55,33 +55,15 @@ function init() {
         });
     });
     
-            
-        
-        
-           
-    
-    
+    $("#small-text").fadeIn(3500);
     
    // $("#dots-span").show();
     //.animate( {left: "+=50"}, {height: "toggle"});
    
 
-
     // $("#story1").fadeOut("300", function () {
     //     $("#story2").fadeIn("300");
     // });
-
-    //    $(welcome-section).animate({}, "slow", function() {
-    //     $("#something").animate({height: "hide"}, "slow", function() {
-    //         $("ul#menu").animate({top: "20", left: "0"}, "slow", function() {
-    //             $(".trigger").animate({height: "show", top: "110", left: "0"}, "slow");        
-    //         });
-    //     });
-    // });
-
-
-      // $($alltexts[2]).fadeIn(3500)
-   
 
 
     //   step: function( now, fx ) {
