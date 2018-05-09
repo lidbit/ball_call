@@ -27,7 +27,26 @@ $(document).ready(function () {
         $(".action-call-text").hide(1000);
         $(".stage-section").hide(1000);
         $("#small-text").show(1000);
-        $("#colour-section").show(1000);
+        $("#jball-section").show(1000);
+
+        $( "#shrink" ).click(function() {
+            $( "#jball" ).animate({
+              width: "200px",
+              height: "200px"
+            //   opacity: 0.4,
+            //   borderWidth: "10px"
+            }, 1500 );
+          });
+          $( "#unshrink" ).click(function() {
+            $( "#jball" ).animate({
+              width: "400px",
+              height: "400px"
+            //   opacity: 0.4,
+            //   borderWidth: "10px"
+            }, 1500 );
+          });
+
+
     });
     $("#b-hole").click(function () {
         // showHideElements("#jball-section", "#colour-section");
@@ -116,6 +135,7 @@ function init() {
     });
 
     $("#colour-section").hide();
+    $("#pictroll").hide();
 }
 
 function animateWelcome() {
