@@ -5,14 +5,104 @@
 
 //calling init function
 $(document).ready(function () {
+
+    //creating left slid out area fr buttons
+    var $marginLefty = $('#slidemarginleft div.inner');
+    $marginLefty.css({
+        marginLeft: $marginLefty.outerWidth() + 'px',
+        display: 'block'
+    });
+
+    //slide out or il the bar of buttons animate
+    $('.b-slide').click(function () {
+        $marginLefty.animate({
+            marginLeft: parseInt($marginLefty.css('marginLeft'), 10) == 0 ?
+                $marginLefty.outerWidth() : 0
+        });
+    });
     init();
+    animateWelcome();
+
+    $("#b-small").click(function () {
+        $(".action-call-text").hide(1000);
+        $(".stage-section").hide(1000);
+        $("#small-text").show(1000);
+        $("#colour-section").show(1000);
+    });
+    $("#b-hole").click(function () {
+        // showHideElements("#jball-section", "#colour-section");
+        //$(".action-call-text").css("opacity", "0");
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#hole-text").show(1000);
+        $("#fall-section").show(1000);
+    });
+    $("#b-tall").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#tall-text").show(1000);
+        $("#tall-section").show(1000);
+    });
+    $("#b-colour").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#colour-text").show(1000);
+        $("#colour-section").show(1000);
+    });
+    $("#b-black").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        //$("#black-text").show(1000);
+        $("#colour-section").show(1000);
+        $("div").css("background-color", "rgb( 0 ,0,0)");
+        // $( "black-text" ).toggle( "slow", function() {
+        //   $("div").css("background-color", "rgb( 0 ,0,0)");
+        // });
+    });
+    $("#b-troll").click(function () {
+        $("div").css("background-color", "transparent");
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#troll-text").show(1000);
+        $("#jball-section").show(1000);
+        //setting up troll section
+        $("#jball").hover(
+            function () {
+                $('#pictroll').fadeIn();
+            }, function () {
+                $('#pictroll').fadeOut();
+            }
+        ); 
+    });
+    $("#b-hall").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#hall-text").show(1000);
+        $("#hall-section").show(1000);
+    });
+    $("#b-repeat").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#repeat-text").show(1000);
+        $("#repeat-section").show(1000);
+    });
+
+
+
 });
 
 //initialising document
 function init() {
     //data to be used in the view for the ball color call
     var data = {
-        circleRadius: 400,
+        circleRadius: 800,
         radiusNumber: 400,
         sizeNumber: 400,
         satNumber: 50,
@@ -25,70 +115,38 @@ function init() {
         data: data
     });
 
-    //hide sections
-    $(".action-call-text").hide();
     $("#colour-section").hide();
-    
-// animate the welcome section
-    var welcome=$("#welcome-text");
+}
+
+function animateWelcome() {
+
+    // animate the welcome section
+    var welcome = $("#welcome-text");
     //hide all welcome text prior to animation;
     var textbits = welcome.children("span");
     textbits.hide();
     $("#dots-span").hide();
-    $("#ball-span").css('opacity','0');
+    $("#ball-span").css('opacity', '0');
     //fade in part one 
-     $("#lets-span").fadeIn(3000);
+    $("#lets-span").fadeIn(3000);
     $("#jball-wrapper").fadeIn(3000);
-    $("#circle-span").fadeIn(2000, function(){
-        $("#circle-span").animate({opacity:0.25 }, 2000, function(){ 
-            $("#ball-span").fadeIn('fast', function(){
-               $("#circle-span").fadeOut(1000, function(){
-                    
-                    $("#ball-span").animate({opacity:1, fontSize: "var(--font-size)", "left": "+=50px", },2000, function(){
+    $("#circle-span").fadeIn(2000, function () {
+        $("#circle-span").animate({ opacity: 0.25 }, 2000, function () {
+            $("#ball-span").fadeIn('fast', function () {
+                $("#circle-span").fadeOut(1000, function () {
+                    $("#ball-span").animate({ opacity: 1, fontSize: "var(--font-size)", "left": "+=50px", }, 2000, function () {
                         $("#jball").addClass("animated shake"); //toggle visibility and bounce
                         $("#jball").addClass("ball");
-                        $("#dots-span").fadeIn('slow');
+                        // $("#dots-span").fadeIn('slow');
                         $("#jball").addClass('bounce');
+                        $("#small-text").css("display", "block");;
                     });
-               });
-           });
+                });
+            });
         });
     });
-    
-    $("#small-text").fadeIn(3500);
-    
-   // $("#dots-span").show();
-    //.animate( {left: "+=50"}, {height: "toggle"});
-   
-
-    // $("#story1").fadeOut("300", function () {
-    //     $("#story2").fadeIn("300");
-    // });
-
-
-    //   step: function( now, fx ) {
-    //     var data = fx.elem.id + " " + fx.prop + ": " + now;
-    //     $( "body" ).append( "<div>" + data + "</div>" );
-    //  }
-
-
-      // $( "#welcome-text span:nth-child(1)" ).animate({ "left": "+=50px" }, "slow" );
-  
-
-    //fadeIn('slow'); 
-    // var $grid=$('#id'),
-    //   $lists = $grid.find('li');
-
-    //   $lists.css('background', '#333');
-    //   $lists.animate({width:'+=100'}, 2000);
-    //   $lists.fadeOut();
-    //   $lists.fadeIn('slow');
-
-    // $( "#" ).click(function() {
-    //     $( ".block" ).animate({ "left": "+=50px" }, "slow" );
-    //   });
-
 }
+
 
 function showText(num, time) {
     $("#welcome-text span:nth-child(" + num + ")").fadeIn(time);
@@ -96,7 +154,18 @@ function showText(num, time) {
 function hideText(num, time) {
     $("#welcome-text span:nth-child(" + num + ")").fadeout(time);
 }
+function showHideElements(elHide, elShow) {
 
+    if (elHide === "all") {
+        //$(".stage-section").css("display", "none");
+        $(".stage-section").hide(2000);
+    }
+    else {
+        $("#" + elHide).hide(2000);
+
+    }
+    $("#" + elShow).show(3000);
+}
 
 // $(document).scrollTop()
 // $(window).height()
@@ -150,3 +219,41 @@ function hideText(num, time) {
 //     });
 // });
 // }
+
+
+
+
+
+
+    // $("#small-text").fadeIn(3500);
+
+    // $("#dots-span").show();
+    //.animate( {left: "+=50"}, {height: "toggle"});
+
+
+    // $("#story1").fadeOut("300", function () {
+    //     $("#story2").fadeIn("300");
+    // });
+
+
+    //   step: function( now, fx ) {
+    //     var data = fx.elem.id + " " + fx.prop + ": " + now;
+    //     $( "body" ).append( "<div>" + data + "</div>" );
+    //  }
+
+
+    // $( "#welcome-text span:nth-child(1)" ).animate({ "left": "+=50px" }, "slow" );
+
+
+    //fadeIn('slow'); 
+    // var $grid=$('#id'),
+    //   $lists = $grid.find('li');
+
+    //   $lists.css('background', '#333');
+    //   $lists.animate({width:'+=100'}, 2000);
+    //   $lists.fadeOut();
+    //   $lists.fadeIn('slow');
+
+    // $( "#" ).click(function() {
+    //     $( ".block" ).animate({ "left": "+=50px" }, "slow" );
+    //   });

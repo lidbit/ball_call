@@ -33,81 +33,96 @@
 
 <body>
     <!-- using animate.css3 libary -->
-    <header id="header-panel">
-        <!--  -->
-        <!-- <section id="orient-panel">  -->
+
+
+    <section id="welcome-section">
+        <div id="welcome-text" class="lets-text">
+            <div class="textright">
+                <span id="lets-span">Lets take a </span>
+            </div>
+            <div class="textleft">
+                <span id="circle-span">circle</span>
+                <span id="ball-span" class="hidden">ball</span>
+                <!-- <span id="dots-span" class="hidden">...</span> -->
+            </div>
+        </div>
+    </section>
+
+
+    <section id="jball-section" class="stage-section">
+            <div id="jball"></div>
+           <img src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
+              
+    </section>
+
+    <section id="action-section" >
+            <div id="text">
+                <p id="small-text" class="action-call-text">And make it small</p>
+                <p id="hole-text" class="action-call-text">Drop down the hole</p>
+                <p id="tall-text" class="action-call-text">Then make it tall</p>
+                <p id="colour-text" class="action-call-text">And Colour call</p>
+                <p id="black-text" class="action-call-text">Then Black it all</p>
+                <p id="troll-text" class="action-call-text">Is it a troll?</p>
+                <p id="hall-text" class="action-call-text">Run down the hall</p>
+                <p id="repeat-text" class="action-call-text">Repeat it all</p>
+            </div>
+     </section>
+
+     <section id="fall-section"  class="stage-section"> this is fall section</section>
+     <section id="tall-section" class="stage-section"> this is tall section</section>
+     <section id="hall-section" class="stage-section"> this is hall section</section>
+
+     <!-- <section id="troll-section" class="stage-section hidden">
+        <div id="trollball2" class="jball">
+            <img src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
+        </div>
+    </section>  -->
+
+    <section id="colour-section" class="stage-section">
+        <div id="app">
+            <div id="controls-panel">
+                <label id="hue">Hue</label>
+                <input type="number" v-model="hueNumber">
+                <label id="hue">Saturation</label>
+                <input type="number" v-model="satNumber">
+                <label id="hue">Lightness</label>
+                <input type="number" v-model="lightNumber">
+            </div>
+            <div id="controls-panel2">
+                    <!-- <input type="number" v-model="radiusNumber"> -->
+                    <input type="number" v-model="sizeNumber">
+            </div>
+            <div id="stage">
+                <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black', 'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }">
+                    <!-- <span class="shadow"></span> -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="slide" id="slidemarginleft">
+            <div class="inner">
+                <!-- <div id="orient-panel"> -->
                 <button id="b-small" class="b-action">Small</button>
                 <button id="b-hole" class="b-action">Hole</button>
                 <button id="b-tall" class="b-action">Tall</button>
                 <button id="b-colour" class="b-action">Colour Call</button>
+                <button id="b-black" class="b-action">Black All</button>
                 <button id="b-troll" class="b-action">Troll</button>
                 <button id="b-hall" class="b-action">Hall</button>
                 <button id="b-repeat" class="b-action">Repeat All</button>
-    
-        <div id="app-name"><a href="./" class="animated shake" >Ball/Call</a> </div>  
-        <!-- </section> -->
-    </header>
-    
-    <section id="welcome-section" >
-            <div id="welcome-text" class="lets-text">
-                <div class="textright"><span id="lets-span">Lets take a   </span></div>
-                <div class ="textleft">
-                    <span id="circle-span">circle</span>
-                    <span id="ball-span" class="hidden">ball</span>
-                    <span id="dots-span" class="hidden">...</span>
-                </div> 
+                <!-- </div> -->
             </div>
-    </section>
-
-    <section id="action-section" >
-                <div id="text">
-                    <p id="small-text" class="action-call-text hidden">And make it small</p>
-                    <p id="drop-span" class="action-call-text hidden">Drop down the hole</p>
-                    <p id="tall-span" class="action-call-text hidden">Then make it tall</p>
-                    <p id="colour-span" class="action-call-text hidden">And Colour call</p>
-                    <p id="troll-span" class="action-call-text hidden">Then Black it all</p>
-                    <p id="troll-span" class="action-call-text hidden">Is it a troll?</p>
-                    <p id="hall-span" class="action-call-text hidden">Run down the hall</p>
-                    <p id="repeat-span" class="action-call-text hidden">Repeat it all</p>
-                </div>
-    </section>
-    <section id="jball-section" >
-        <div class="col-1"></div>    
-        <div class="col-10">
-            <div id="jball"></div>
+            <div id="app-name">
+                <button class="b-slide animated shake">Ball/Call</button>
+            </div>
+            <!-- <button class="b-slide"> Ball/Call</button> -->
         </div>
-        <div class="col-1"></div>
-    </section>
-
-    <section id="colour-section" class="hidden">
-        <div id="app">
-            <div id="controls-panel">
-                <input type="number" v-model="radiusNumber">
-                <input type="number" v-model="sizeNumber">
-                <input type="number" v-model="hueNumber">
-                <input type="number" v-model="satNumber">
-                <input type="number" v-model="lightNumber">
-            </div>
-            <div id="controls-panel2">
-
-            </div>
-            <div id="stage">
-                <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black', 'width':sizeNumber + 'px', 'height':sizeNumber + 'px',  'border-radius': radiusNumber+'px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
-                <span class="shadow"></span>
-            </div>
-            <!-- <div id="components-demo">
-                    <hue-table></hue-table>
-                    <saturation-table></saturation-table>
-                    <lightness-table></lightness-table>
-                </div> -->
-
-        </div>  
-        </section>
-
-        <!-- end view block -->
-        <footer id="footer" role="contentinfo">
-            <p>&copy; copyright Lydia Douglas. 2018</p>
-        </footer>
+    <!-- end view block -->
+    <footer id="footer" role="contentinfo">
+        <p>&copy; copyright Lydia Douglas. 2018</p>
+    </footer>
 
 
 </body>

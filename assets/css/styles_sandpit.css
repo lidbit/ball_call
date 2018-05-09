@@ -82,3 +82,57 @@ background-color: var(--color-backgrd) ;
   border-radius: 150px;
  
 }
+.allhide {
+  display:none;
+}
+/* 
+#trollball {
+  position: relative;
+  border:1px solid #222;
+  border-radius: 50%;
+  width:505px;
+  height:505px;
+  background-image: url("/assets/images/troll.png" );
+}
+
+#anotherball{
+  position: absolute;
+  top:0;
+  left:0;
+  display:none;
+  border:1px solid #222;
+   background-color: lightcoral; 
+  border-radius: 50%;
+  width:505px;
+  height:505px;
+} */
+
+
+#trollball2 {
+  position: relative;
+  border-radius: 50%;
+  width:405px;
+  height:405px;
+
+}
+#pictroll {
+  position: absolute;
+  border-radius: 50%;
+  left: -19%;
+  bottom:-10%;
+  width:575px;
+  height:575px;
+}
+
+
+/* #anotherball2{
+  position: absolute;
+  top:0;
+  left:0;
+  display:none;
+  border:1px solid #222;
+   background-color: lightcoral; 
+  border-radius: 50%;
+  width:405px;
+  height:405px;
+} */
