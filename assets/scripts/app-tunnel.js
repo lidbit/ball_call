@@ -1,7 +1,7 @@
 /* Circles app created by Lydia Douglas 2018 */
 
 /*** declare global variables **/
-
+var $currentId = $("#welcome_section");
 
 //calling init function
 $(document).ready(function () {
@@ -24,10 +24,10 @@ $(document).ready(function () {
         setTimeout(function() {
             $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({height:"+=200px"}, 900).animate({height:"-=200px"}, 900);
         }, 1000);
-        setTimeout(function(){$('.b-slide').trigger("click");}, 2000)
-        // $(".b-slide").delay(6000).animate({width:"+=100px", height:"+=100px" }, 400).delay(100).animate({width:"-=100px", height:"-=100px" }, 400).addClass('animated shake');
-        //triggering the menu show the menu can appear or dissaper when clicked
-        // 
+        setTimeout(function(){$(".b-slide").trigger("click");}, 2000);
+        setTimeout(function(){
+            $("#welcome-section").addClass('animated fadeOutRight');
+        }, 4000);
 
     });
 
@@ -74,7 +74,9 @@ function initSlider() {
     });
 
     $("#b-small").click(function () {
-        $("#welcome-section").toggle(1000);
+        
+        
+
         $("#small-text").toggle(1000);
         $(".ball").toggleClass("shrink");
     });

@@ -97,6 +97,27 @@
     margin-right: .5em;
 }
 
+
+#action-section{
+    min-width :200px;
+ }
+
+ .action-call-text {
+     font-family: var(--font-cursive);
+     font-size: 2em;
+     font-weight: 300;
+     text-align: center;
+     padding: 20px 0;
+     color: var(--text-color);
+     width:10%;
+    
+     display:none;
+
+ }
+
+
+
+
 /* #circle-div {
     text-align: left;
     padding-left: 1em;
@@ -241,11 +262,22 @@
 .c-section{
       display:none;
 }
-.jball{
-    /* display:none; */
-}
+
 p{ display:none;}
 
+
+@keyframes color-me-in {
+    0% {
+      background:lightblue;
+    }
+    /* Adding a step in the middle */
+    50% {
+      background: blue;
+    }
+    100% {
+      background: black;
+    }
+  }
 
 /**************** initial animations *******************/
 /*  'let take a' animation */
@@ -344,6 +376,7 @@ p{ display:none;}
     position: relative;
     overflow: hidden;
     width: 100%;
+    margin-top:.1%;
 }
 
 .slide .inner {
@@ -351,6 +384,7 @@ p{ display:none;}
     left: 18%;
     top: 0;
     width: 100%;
+    
     /* margin-left: 3%; */
     /* background-color: pink; */
 }
