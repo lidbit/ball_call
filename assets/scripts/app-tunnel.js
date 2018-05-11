@@ -5,31 +5,35 @@
 
 //calling init function
 $(document).ready(function () {
-    
-//AOS.init();
- 
- initVue();
- initSlider();
- $( ".t-circle-left" ).fadeIn( 2500 ).delay( 1000 ).slideUp( 800 , function(){
-    $( ".t-ball-left" ).delay(800).fadeIn( 2500 );
-    
- });
- $(".circle-div").fadeIn( 2500 ).delay( 1000 ).animate({
-    "width": "1%",
-    "opacity":"0.1",
-  }, 3500 ,function(){
-    $(".circle-div").hide();
-    $(".jball").delay(100).fadeIn(3000, function(){
-        $('.b-slide').trigger( "click" );
+
+    //AOS.init();
+
+    initVue();
+    initSlider();
+
+    //this is the animation for welcome text and cirle/ball switch over
+    $(".t-circle-left").fadeIn(2500).delay(1000).slideUp(800, function () {
+        $(".t-ball-left").delay(800).fadeIn(2500);
+    });
+    $(".circle-div").fadeIn(1500).delay(1000).animate({
+        "width": "1%",
+        "opacity": "0.1",
+    }, 3500, function () {
+        $(".circle-div").hide();
+        $(".jball").fadeIn(800).addClass('animated bounceInDown');
+        setTimeout(function() {
+            $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({height:"+=200px"}, 900).animate({height:"-=200px"}, 900);
+        }, 1000);
+        setTimeout(function(){$('.b-slide').trigger("click");}, 2000)
+        // $(".b-slide").delay(6000).animate({width:"+=100px", height:"+=100px" }, 400).delay(100).animate({width:"-=100px", height:"-=100px" }, 400).addClass('animated shake');
+        //triggering the menu show the menu can appear or dissaper when clicked
+        // 
+
     });
 
 
-   
-  });
- 
-  
- 
-//  $( "#ball-span" ).slideDown( 600 ).delay( 2000 ).fadeIn( 400 );
+
+    //  $( "#ball-span" ).slideDown( 600 ).delay( 2000 ).fadeIn( 400 );
 });
 
 //initialising document
@@ -53,109 +57,89 @@ function initVue() {
     // $("#pictroll").hide();
 }
 
-function initSlider(){
-        //creating left slid out area fr buttons
-        var $marginLefty = $('#slidemarginleft div.inner');
-        $marginLefty.css({
-            marginLeft: $marginLefty.outerWidth() + 'px',
-            display: 'block'
-        });
-    
-        //slide out or il the bar of buttons animate
-        $('.b-slide').click(function () {
-            $marginLefty.animate({
-                marginLeft: parseInt($marginLefty.css('marginLeft'), 10) == 0 ?
-                    $marginLefty.outerWidth() : 0
-            });
-        });
+function initSlider() {
+    //creating left slid out area fr buttons
+    var $marginLefty = $('#slidemarginleft div.inner');
+    $marginLefty.css({
+        marginLeft: $marginLefty.outerWidth() + 'px',
+        display: 'block'
+    });
 
-        $("#b-small").click(function () {
-            $(".action-call-text").hide(1000);
-            $(".stage-section").hide(1000);
-            $("#small-text").show(1000);
-            $("#jball-section").show(1000);
-    
-            $( "#shrink" ).click(function() {
-                $( "#jball" ).animate({
-                  width: "200px",
-                  height: "200px"
-                //   opacity: 0.4,
-                //   borderWidth: "10px"
-                }, 1500 );
-              });
-              $( "#unshrink" ).click(function() {
-                $( "#jball" ).animate({
-                  width: "400px",
-                  height: "400px"
-                //   opacity: 0.4,
-                //   borderWidth: "10px"
-                }, 1500 );
-              });
-    
-    
+    //slide out or il the bar of buttons animate
+    $('.b-slide').click(function () {
+        $marginLefty.animate({
+            marginLeft: parseInt($marginLefty.css('marginLeft'), 10) == 0 ?
+                $marginLefty.outerWidth() : 0
         });
-        $("#b-hole").click(function () {
-            // showHideElements("#jball-section", "#colour-section");
-            //$(".action-call-text").css("opacity", "0");
-            $(".action-call-text").hide(1000);
-            //showHideElements("#jball-section", "#colour-section");
-            $(".stage-section").hide(1000);
-            $("#hole-text").show(1000);
-            $("#fall-section").show(1000);
-        });
-        $("#b-tall").click(function () {
-            $(".action-call-text").hide(1000);
-            //showHideElements("#jball-section", "#colour-section");
-            $(".stage-section").hide(1000);
-            $("#tall-text").show(1000);
-            $("#tall-section").show(1000);
-        });
-        $("#b-colour").click(function () {
-            $(".action-call-text").hide(1000);
-            //showHideElements("#jball-section", "#colour-section");
-            $(".stage-section").hide(1000);
-            $("#colour-text").show(1000);
-            $("#colour-section").show(1000);
-        });
-        $("#b-black").click(function () {
-            $(".action-call-text").hide(1000);
-            //showHideElements("#jball-section", "#colour-section");
-            $(".stage-section").hide(1000);
-            //$("#black-text").show(1000);
-            $("#colour-section").show(1000);
-            $("div").css("background-color", "rgb( 0 ,0,0)");
-            // $( "black-text" ).toggle( "slow", function() {
-            //   $("div").css("background-color", "rgb( 0 ,0,0)");
-            // });
-        });
-        $("#b-troll").click(function () {
-            $("div").css("background-color", "transparent");
-            $(".action-call-text").hide(1000);
-            //showHideElements("#jball-section", "#colour-section");
-            $(".stage-section").hide(1000);
-            $("#troll-text").show(1000);
-            $("#jball-section").show(1000);
-            //setting up troll section
-            $("#jball").hover(
-                function () {
-                    $('#pictroll').fadeIn();
-                }, function () {
-                    $('#pictroll').fadeOut();
-                }
-            ); 
-        });
-        $("#b-hall").click(function () {
-            $(".action-call-text").hide(1000);
-            //showHideElements("#jball-section", "#colour-section");
-            $(".stage-section").hide(1000);
-            $("#hall-text").show(1000);
-            $("#hall-section").show(1000);
-        });
-        $("#b-repeat").click(function () {
-            $("#repeat-text").slideToggle(1000);
-        });
-    
-    
+    });
+
+    $("#b-small").click(function () {
+        $("#welcome-section").toggle(1000);
+        $("#small-text").toggle(1000);
+        $(".ball").toggleClass("shrink");
+    });
+    $("#b-hole").click(function () {
+        // showHideElements("#jball-section", "#colour-section");
+        //$(".action-call-text").css("opacity", "0");
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#hole-text").show(1000);
+        $("#fall-section").show(1000);
+    });
+    $("#b-tall").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#tall-text").show(1000);
+        $("#tall-section").show(1000);
+    });
+    $("#b-colour").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#colour-text").show(1000);
+        $("#colour-section").show(1000);
+    });
+    $("#b-black").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        //$("#black-text").show(1000);
+        $("#colour-section").show(1000);
+        $("div").css("background-color", "rgb( 0 ,0,0)");
+        // $( "black-text" ).toggle( "slow", function() {
+        //   $("div").css("background-color", "rgb( 0 ,0,0)");
+        // });
+    });
+    $("#b-troll").click(function () {
+        $("div").css("background-color", "transparent");
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#troll-text").show(1000);
+        $("#jball-section").show(1000);
+        //setting up troll section
+        $("#jball").hover(
+            function () {
+                $('#pictroll').fadeIn();
+            }, function () {
+                $('#pictroll').fadeOut();
+            }
+        );
+    });
+    $("#b-hall").click(function () {
+        $(".action-call-text").hide(1000);
+        //showHideElements("#jball-section", "#colour-section");
+        $(".stage-section").hide(1000);
+        $("#hall-text").show(1000);
+        $("#hall-section").show(1000);
+    });
+    $("#b-repeat").click(function () {
+        $("#repeat-text").slideToggle(1000);
+    });
+
+
 
 
 
