@@ -13,15 +13,8 @@
     - she kept coming back to it many many times*/
 
  :root {
-     /* --color-backgd: hsl(180, 26%, 74%); */
-     /* --color-backgd-dk: hsl(180, 22%, 36%) ; */
-     /* --color-nonview: hsl(40, 6%, 91%); */
      --color-border: black;
-     /* --color-ball: pink;
-        --color-ball-top-ref: pink;
-        --color-ball-bot-ref: pink; */
      --text-color: lightgrey;
-     /* hsl(214, 57%, 25%);*/
      --text-color-dark: #17a7ac;
      --ball-gradient-lt: hsl(300, 40%, 33%);
      --ball-gradient-dk: hsl(0, 10%, 20%);
@@ -29,13 +22,9 @@
      --color-footer: hsl(40, 6%, 91%);
      --font-size: 18px;
      --color-header: transparent;
-     /* --color-sunset1:      #141e30;          /*#2c3e50;*/
-     /* --color-sunset2:         #552437;      #374553; */
-     /* --color-sunset3: #39353a;  #a9e4f7 */
      --font-playful: 'Gochi Hand';
      --font-cursive: 'Caveat';
      --font-choppy: 'Short Stack';
-     /* --color-backgrd: rgb(250, 184, 179); */
  }
 
  html {
@@ -70,71 +59,53 @@
  #welcome-text {
      min-width: 95%;
      min-width: height 2px;
-     /* padding: 30px 20px;  */
-     /* padding-top:6%;  */
      margin: 0 auto;
-      margin-top: 5%;
-     /* background-color:blue;    */
+     margin-top: 5%;
  }
 
  .lets-text {
-    font-family: var(--font-choppy);
-    font-size: 3.5em;
-    /* font-weight: bolder; */
-    min-width:65%;
-    letter-spacing: 0.1em;
-    text-align: center;
-    color: var(--text-color);
-    /* background-color:blue; */
-    display: flex;
-    padding-left: 20%; 
-    padding-bottom:10px;
-    /* padding-top: 3%; */
-}
-
-#lets-div {
-    text-align: right;
-    margin-right: .5em;
-}
-
-
-#action-section{
-    min-width :200px;
- }
-
- .action-call-text {
-     font-family: var(--font-cursive);
-     font-size: 2em;
-     font-weight: 300;
+     font-family: var(--font-choppy);
+     font-size: 3.5em;
+     min-width: 65%;
+     letter-spacing: 0.1em;
      text-align: center;
-     padding: 20px 0;
      color: var(--text-color);
-     width:10%;
-    
-     display:none;
-
+     display: flex;
+     padding-left: 20%;
+     padding-bottom: 10px;
  }
 
-
-
-
-/* #circle-div {
-    text-align: left;
-    padding-left: 1em;
-} */
-
-
- .position-fixed{
-    position: fixed;
+ #lets-div {
+     text-align: right;
+     margin-right: 0.5em;
  }
 
- .position-unfixed{
-    position: relative;
+ #spacer {
+     height: 60vh;
  }
- /* #jball-wrapper {
-    display: flex;
-    width: 95%;
-} */
+
+ #action-section {
+     min-width: 200px;
+ }
+
+ h4 {
+     font-family: var(--font-cursive);
+     font-size: 3em;
+     font-weight: 300;
+     background-color: rgba(107, 91, 149, 0.315);
+     width: 100%;
+     ;
+     text-align: center;
+     margin: 0 auto;
+ }
+
+ .position-fixed {
+     position: fixed;
+ }
+
+ .position-unfixed {
+     position: relative;
+ }
 
  #circle {
      width: 400px;
@@ -143,75 +114,82 @@
      background-color: var(--text-color);
      border: 8px;
      border-color: var(--color-border);
-     margin: 0 auto; 
-     margin-top:5%;
+     margin: 0 auto;
+     margin-top: 5%;
  }
 
  .ball {
-    display: inline-block;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    position: relative;
-    margin: 0 auto; 
-    margin-top:5%;
-    background: radial-gradient(circle at 50% 120%, var(--ball-gradient-lt), var(--ball-gradient-lt) 80%, var(--ball-gradient-lt) 90%);
-    z-index: 2;
-}
-
-.ball:before {
-    content: "";
-    position: absolute;
-    background: radial-gradient(circle at 50% 120%, rgba(185, 184, 184, 0.5), rgba(128, 127, 127, 0) 70%);
-    border-radius: 50%;
-    bottom: 2.5%;
-    left: 5%;
-    opacity: 0.6;
-    height: 100%;
-    width: 90%;
-    filter: blur(10px);
-    z-index: 3;
-}
-
-.ball:after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 5%;
-    left: 10%;
-    border-radius: 50%;
-    background: radial-gradient(circle at 50% 50%, rgba(226, 226, 226, 0.7),
-     rgba(226, 226, 226,0.6) 14%, rgba(226, 226, 226, 0) 24%);
-    transform: translateX(-28%) translateY(-32%) skewX(-20deg);
-    filter: blur(10px);
-}
-.ball .shadow {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
-    transform: rotateX(90deg) translateZ(-150px);
-    z-index: 1;
-}
-.ball {
-    display:none;
-}
-
-.shrink{
-    transition: width 2s, height 2s;
-}
- .shrink:hover{
-    width: 50px;
-    height: 50px;
-} 
-
-
- .invisible {
-     opacity:0;
+     display: inline-block;
+     width: 400px;
+     height: 400px;
+     border-radius: 50%;
+     position: relative;
+     margin: 0 auto;
+     margin-top: 5%;
+     background: radial-gradient(circle at 50% 120%, var(--ball-gradient-lt), var(--ball-gradient-lt) 80%, var(--ball-gradient-lt) 90%);
+     z-index: 2;
  }
 
-/* 
+ .ball:before {
+     content: "";
+     position: absolute;
+     background: radial-gradient(circle at 50% 120%, rgba(185, 184, 184, 0.5), rgba(128, 127, 127, 0) 70%);
+     border-radius: 50%;
+     bottom: 2.5%;
+     left: 5%;
+     opacity: 0.6;
+     height: 100%;
+     width: 90%;
+     filter: blur(10px);
+     z-index: 3;
+ }
+
+ .ball:after {
+     content: "";
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 5%;
+     left: 10%;
+     border-radius: 50%;
+     background: radial-gradient(circle at 50% 50%, rgba(226, 226, 226, 0.7), rgba(226, 226, 226, 0.6) 14%, rgba(226, 226, 226, 0) 24%);
+     transform: translateX(-28%) translateY(-32%) skewX(-20deg);
+     filter: blur(10px);
+ }
+
+ .ball .shadow {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+     transform: rotateX(90deg) translateZ(-150px);
+     z-index: 1;
+ }
+
+ .ball {
+     display: none;
+ }
+
+ .position-fixed {
+     position: fixed;
+     top: 25%;
+     left: 35%;
+ }
+
+ .shrink {
+     transition: width 2s, height 2s;
+ }
+
+ .shrink:hover {
+     width: 50px;
+     height: 50px;
+ }
+
+ .invisible {
+     opacity: 0;
+ }
+
+ /* 
 [data-aos="circle"] {
     animation-delay: 2s;
     transform:translate(20px,20px); 
@@ -223,77 +201,87 @@
     opacity:1;
 } */
 
-@keyframes fade-in-right {
-    from {
-      opacity: 0;
-      transform: translateX(-200px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  @keyframes fade-in-left{
-    from {
-      opacity: 0;
-      transform: translateX(200px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes grow-left {
-    from {
-      transform: scaleX(0);
-    }
-    to {
-      transform: scaleX(1);
-    }
-  }
+ @keyframes fade-in-right {
+     from {
+         opacity: 0;
+         transform: translateX(-200px);
+     }
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
 
-.t-circle-left{
-    display:none;
-}
-.t-ball-left{
-    display:none;
-}
-.c-section{
-      display:none;
-}
+ @keyframes fade-in-left {
+     from {
+         opacity: 0;
+         transform: translateX(200px);
+     }
+     to {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
 
-p{ display:none;}
+ @keyframes grow-left {
+     from {
+         transform: scaleX(0);
+     }
+     to {
+         transform: scaleX(1);
+     }
+ }
 
+ .t-circle-left {
+     display: none;
+ }
 
-@keyframes color-me-in {
-    0% {
-      background:lightblue;
-    }
-    /* Adding a step in the middle */
-    50% {
-      background: blue;
-    }
-    100% {
-      background: black;
-    }
-  }
+ .t-ball-left {
+     display: none;
+ }
 
-/**************** initial animations *******************/
-/*  'let take a' animation */
-  /* .textright, #circle-section {
+ .c-section {
+     display: none;
+ }
+
+ p {
+     display: none;
+ }
+
+ @keyframes color-me-in {
+     0% {
+         background: lightblue;
+     }
+     /* Adding a step in the middle */
+     50% {
+         background: blue;
+     }
+     100% {
+         background: black;
+     }
+ }
+
+ /**************** initial animations *******************/
+
+ /*  'let take a' animation */
+
+ /* .textright, #circle-section {
     opacity: 0;
     animation: fade-in-right ease 1.9s forwards;
   } */
-  /* 'circle' animation*/
-  /* .textleft  {
+
+ /* 'circle' animation*/
+
+ /* .textleft  {
     transform: scaleX(0);
     transform-origin: left;
     animation: grow-left cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s forwards;
     animation-delay: 1s;
-  } */ 
-  /* circle roll in */
-  /* #circle-section{
+  } */
+
+ /* circle roll in */
+
+ /* #circle-section{
     animation-delay: 1s;
   }
 
@@ -301,168 +289,211 @@ p{ display:none;}
     opacity: 0;
     animation: fade-in-left ease 1.9s forwards;
   } */
-  /* #ball-span {
+
+ /* #ball-span {
     opacity:0;
     animation:fade-in-right ease 2s forwards;
   } */
-  .hidden{
-      display: none;
-  }
-  .visible{
-      display:block;
-  }
 
+ .hidden {
+     display: none;
+ }
 
-  .helper{
-    width: 90px;
-    height: 90px;
-    border-radius: 90px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    z-index:5;
-    background-color: #58b6b975;
-    transition: opacity .6s;
-  }
+ .visible {
+     display: block;
+ }
 
+ .helper {
+     width: 90px;
+     height: 90px;
+     border-radius: 90px;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 5;
+     background-color: #58b6b975;
+     transition: opacity .6s;
+ }
 
+ /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-/* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-  #app {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    /* background:linear-gradient( var(--color-backgd), var(--color-backgd-dk));  */
-}
+ #app {
+     position: relative;
+     width: 100%;
+     height: 60vh;
+     /* background:linear-gradient( var(--color-backgd), var(--color-backgd-dk));  */
+ }
 
-#controls-panel {
-    /* background-color: hsl(180, 50%, 50%); */
-    color: hsl(0, 0%, 100%);
-    width: 15%;
-    height: 100%;
-    float: left;
-    padding: 1%;
-}
+ #controls-panel {
+     /* background-color: hsl(180, 50%, 50%); */
+     color: hsl(0, 0%, 100%);
+     width: 15%;
+     height: 100%;
+     float: left;
+     padding: 1%;
+ }
 
-#controls-panel2 {
-    /* background-color: hsl(180, 50%, 50%); */
-    color: hsl(0, 0%, 100%);
-    width: 15%;
-    height: 100%;
-    float: right;
-    padding: 1%;
-}
-.circle-div{
-   width:100%;
-   min-height:300px;
-   display:none;
-}
+ #controls-panel2 {
+     /* background-color: hsl(180, 50%, 50%); */
+     color: hsl(0, 0%, 100%);
+     width: 15%;
+     height: 100%;
+     float: right;
+     padding: 1%;
+ }
 
-#stage {
-    width: 300px;
-    height: 300px;
-    display: inline-block;
-    margin: 20px;
-    perspective: 1200px;
-    perspective-origin: 50% 50%;
-}
-/* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+ .circle-div {
+     width: 100%;
+     min-height: 300px;
+     display: none;
+ }
 
-/* ********************* slider  **********************************/
+ #stage {
+     width: 300px;
+     height: 300px;
+     display: inline-block;
+     margin: 20px;
+     perspective: 1200px;
+     perspective-origin: 50% 50%;
+ }
+
+ /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+ /* ********************* slider  **********************************/
+
  /* this is the nav slider */
 
  .slide {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    margin-top:.1%;
-}
+     position: relative;
+     overflow: hidden;
+     width: 100%;
+     margin-top: 0.1%;
+ }
 
-.slide .inner {
-    position: absolute;
-    left: 18%;
-    top: 0;
-    width: 100%;
-    
-    /* margin-left: 3%; */
-    /* background-color: pink; */
-}
+ .slide .inner {
+     position: absolute;
+     left: 18%;
+     top: 0;
+     width: 100%;
+     /* margin-left: 3%; */
+     /* background-color: pink; */
+ }
 
-.js .slide .inner {
-    display: none;
-}
+ .js .slide .inner {
+     display: none;
+ }
 
-.b-action {
-    cursor: pointer;
-    background-color: rgba(107, 91, 149, 0.315);
-    border: 2px solid #17a7ac;
-    color: #17a7ac;
-    font-size: 22px;
-    font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-width: 2.5%;
-    transition: background-color 0.5s, color 0.8s, transform 0.5s;
-    padding-top: 10px;
-    z-index: 2;
-}
+ .b-action {
+     cursor: pointer;
+     background-color: rgba(107, 91, 149, 0.315);
+     border: 2px solid #17a7ac;
+     color: #17a7ac;
+     font-size: 22px;
+     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     min-width: 2.5%;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s;
+     padding-top: 10px;
+     z-index: 2;
+ }
 
-.b-action:hover {
-    background-color: #4d9da0;
-    /* #1b75f7;*/
-    color: #415c4d;
-    transform: scale(1.1) translate(1px, 1px);
-}
+ .b-action:hover {
+     background-color: #4d9da0;
+     /* #1b75f7;*/
+     color: #415c4d;
+     transform: scale(1.1) translate(1px, 1px);
+ }
 
-.b-action:active {
-    outline: none;
-    border: none;
-}
+ .b-action:active {
+     outline: none;
+     border: none;
+ }
 
-.b-action:focus {
-    outline: 0;
-}
+ .b-action:focus {
+     outline: 0;
+ }
 
-#app-name {
-    float: right;
-    padding-right: 12%; 
-   
-}
+ #app-name {
+     float: right;
+     padding-right: 12%;
+ }
 
+ .b-slide {
+     cursor: pointer;
+     /* background-color: transparent; */
+     border: 2px solid #17a7ac;
+     border: 2px;
+     font-size: 2em;
+     color: var(--text-color-dark);
+     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s;
+     background-color: rgba(19, 227, 241, 0.733);
+     margin-top: 1%;
+     z-index: 4;
+ }
 
-.b-slide {
-    cursor: pointer;
-    /* background-color: transparent; */
-    border: 2px solid #17a7ac; 
-    border: 2px;
-    font-size: 2em;
-    color: var(--text-color-dark);
-    font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: background-color 0.5s, color 0.8s, transform 0.5s;
-    background-color:rgba(19, 227, 241, 0.733); 
-    margin-top:1%; 
-    z-index: 4;
-}
+ .b-slide:hover {
+     background-color: rgba(107, 91, 149, 0.315);
+     /* #4d9da0; */
+     /* #1b75f7;*/
+     color: white;
+     transform: scale(1.1) translate(1px, 1px);
+ }
 
-.b-slide:hover {
-    background-color:rgba(107, 91, 149, 0.315); /* #4d9da0; */
-    /* #1b75f7;*/
-    color: white;
-    transform: scale(1.1) translate(1px, 1px);
-}
+ .b-slide:active {
+     outline: none;
+     border: none;
+ }
 
-.b-slide:active {
-    outline: none;
-    border: none;
-}
+ .b-slide:focus {
+     outline: 0;
+ }
 
-.b-slide:focus {
-    outline: 0;
-}
+ /* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-/* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+ .animated {
+     -webkit-animation-duration: 1.5s;
+     animation-duration: 1.5s;
+     /* visibility:visible; */
+ }
 
-.animated {
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-      /* visibility:visible; */
-  } 
+ .action-call-text {
+     padding-left: 4%;
+     font-family: var(--playful), Arial, Helvetica, sans-serif;
+     font-size: 2em;
+     width:30%;
+     margin-bottom:5%;
+     z-index:100;
+ }
+
+ .shortstreach {
+     font-style: var(--cursive), Arial, Helvetica, sans-serif;
+     font-size: 2em;
+     letter-spacing: 0.02em;
+ }
+
+ .blackish-bold {
+     font-style: var(--choppy), Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 2em;
+ }
+
+ .streachLow {
+     font-style: var(--cursive), Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 2.5;
+     letter-spacing: 0.2em;
+ }
+
+ .streachHigh {
+     font-style: var(--font-playful), Arial, Helvetica, sans-serif;
+     font-weight: 300;
+     font-size: 1.5em;
+     letter-spacing: 0.07em;
+ }
+
+ .blackish-med {
+     font-style: var(--choppy), Arial, Helvetica, sans-serif;
+     font-weight: bold;
+     font-size: 0.5em;
+ }

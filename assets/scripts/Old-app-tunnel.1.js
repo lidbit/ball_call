@@ -4,10 +4,9 @@
 var $currentId = $("#welcome_section");
 
 //calling init function
-$(document).ready(function (){
+$(document).ready(function () {
 
-    AOS.init({ duration: 1200,
-        easing: 'ease-in-out-back'});
+    //AOS.init();
 
     initVue();
     initSlider();
@@ -23,7 +22,7 @@ $(document).ready(function (){
         $(".circle-div").hide();
         $(".jball").fadeIn(800).addClass('animated bounceInDown');
         setTimeout(function() {
-            $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({height:"+=90px"}, 600).animate({height:"-=90px"}, 600);
+            $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({height:"+=200px"}, 900).animate({height:"-=200px"}, 900);
         }, 1000);
         setTimeout(function(){$(".b-slide").trigger("click");}, 2000);
         setTimeout(function(){
@@ -76,7 +75,7 @@ function initSlider() {
 
     $("#b-small").click(function () {
         
-
+        
 
         $("#small-text").toggle(1000);
         $(".ball").toggleClass("shrink");
