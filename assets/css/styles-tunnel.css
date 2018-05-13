@@ -58,12 +58,15 @@
  body {
      margin-top: 0px;
      margin-bottom: 0px;
-     font-family: var(--playful),Verdana, Geneva, Tahoma, sans-serif;
      font-size: var(--font-size);
      color: var(--text-color-neutral);
      height: 10000px;
      width: 100%;
      font-family: var(--font-choppy), Var(--font-playful), cursive, 'Courier New', Courier, monospace;
+     transition: background-color .5s ease-in-out;
+     -moz-transition: background-color .5s ease-in-out;
+     -webkit-transition: background-color .5s ease-in-out; 
+    -o-transition: background-color .5s ease-in-out; 
  }
 /*>>>>>>>>>>>>>>>>>>> helper classes  >>>>>>>>>>>>>>>>>>>>>>>>>*/
 .position-fixed {
@@ -72,6 +75,17 @@
 .position-unfixed {
     position: relative;
 }
+.invisible{
+    visibility:hidden;
+}
+.visible{
+    visibility: visible;
+}
+.black-all{
+   background-color:  rgb( 0 ,0,0);
+}
+
+
 /* related animation css plugin */
 .animated {
     -webkit-animation-duration: 1.5s;
@@ -222,6 +236,12 @@
      margin-top: 5%;
      background: radial-gradient(circle at 50% 120%, var(--ball-gradient-lt), var(--ball-gradient-lt) 80%, var(--ball-gradient-lt) 90%);
      z-index: 2;
+     background-color:green;
+     transition: background-color .5s ease-in-out;
+     -moz-transition: background-color .5s ease-in-out;
+     -webkit-transition: background-color .5s ease-in-out; 
+    -o-transition: background-color .5s ease-in-out; 
+    --almost-black: rgb(47, 47, 48);
  }
 
  .ball:before {
@@ -450,6 +470,7 @@
      font-size: 1.2em;
      /* width:100%; */
      min-height:80px;
+     min-width:150px;
  }
  .mini-panel:hover{
      transform: scale(1.1) translate(1px, 1px);
@@ -462,7 +483,7 @@
     min-height: 20px;
     border:none;
     height: 45%;
-    font-size: 1.2em;
+    font-size: 1em;
     text-align: center;
     margin-top: 5%;
 
@@ -553,3 +574,4 @@ h4 {
     position:fixed;
     z-index:105;
  }
+

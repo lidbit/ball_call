@@ -4,34 +4,36 @@
 var $currentId = $("#welcome_section");
 
 //calling init function
-$(document).ready(function (){
+$(document).ready(function () {
 
-    AOS.init({ duration: 1200,
-        easing: 'ease-in-out-back'});
+    AOS.init({
+        duration: 1200,
+        easing: 'ease-in-out-back'
+    });
 
     initVue();
     initSlider();
 
-   //this is the animation for welcome text and cirle/ball switch over
-   $(".t-circle-left").fadeIn(2500).delay(1000).slideUp(800, function () {
-    $(".t-ball-left").delay(800).fadeIn(1500);
-});
-$(".circle-div").fadeIn(1500).delay(8000).animate({
-    "width": "1%",
-    "opacity": "0.1",
-}, 1500, function () {
-    $(".circle-div").hide();
+    //this is the animation for welcome text and cirle/ball switch over
+    $(".t-circle-left").fadeIn(2500).delay(1000).slideUp(800, function () {
+        $(".t-ball-left").delay(800).fadeIn(1500);
+    });
+    $(".circle-div").fadeIn(1500).delay(8000).animate({
+        "width": "1%",
+        "opacity": "0.1",
+    }, 1500, function () {
+        $(".circle-div").hide();
 
-    // $(".ball").fadeIn(800).addClass('animated bounceInDown');
-    setTimeout(function() {
-        $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({height:"+=90px"}, 600).animate({height:"-=90px"}, 600);
-    }, 1000);
-    setTimeout(function(){$(".b-slide").trigger("click");}, 2000);
-    setTimeout(function(){
-        $("#welcome-section").addClass('animated fadeOutRight');
-    }, 4000);
+        // $(".ball").fadeIn(800).addClass('animated bounceInDown');
+        setTimeout(function () {
+            $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({ height: "+=90px" }, 600).animate({ height: "-=90px" }, 600);
+        }, 1000);
+        setTimeout(function () { $(".b-slide").trigger("click"); }, 2000);
+        setTimeout(function () {
+            $("#welcome-section").addClass('animated fadeOutRight');
+        }, 4000);
 
-});
+    });
 
     // //this is the animation for welcome text and cirle/ball switch over
     // $(".t-circle-left").fadeIn(2500).delay(1000).slideUp(800, function () {
@@ -96,7 +98,7 @@ function initSlider() {
     });
 
     $("#b-small").click(function () {
-        
+
 
 
         $("#small-text").toggle(1000);
@@ -126,25 +128,12 @@ function initSlider() {
         $("#colour-section").show(1000);
     });
     $("#b-black").click(function () {
-        $(".action-call-text").hide(1000);
-        //showHideElements("#jball-section", "#colour-section");
-        // $(".stage-section").hide(1000);
-        //$("#black-text").show(1000);
-        $("#colour-section").show(1000);
-        $("div").css("background-color", "rgb( 0 ,0,0)");
-        // $( "black-text" ).toggle( "slow", function() {
-        //   $("div").css("background-color", "rgb( 0 ,0,0)");
-        // });
+        $("body").toggleClass("black-all");
     });
     $("#b-troll").click(function () {
-        $("div").css("background-color", "transparent");
-        $(".action-call-text").hide(1000);
-        //showHideElements("#jball-section", "#colour-section");
-        // $(".stage-section").hide(1000);
-        $("#troll-text").show(1000);
-        $("#jball-section").show(1000);
         //setting up troll section
-        $("#jball").hover(
+        $("#pictroll").toggleClass("invisible");
+        $(".ball").hover(
             function () {
                 $('#pictroll').fadeIn();
             }, function () {

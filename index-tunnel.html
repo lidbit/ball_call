@@ -78,7 +78,7 @@
 
     <!-- <div id="ball" class="ball jball position-fixed"></div> -->
     <div id="vue-wrapper"> <!-- class="position-fixed">-->
-        <section id="colour-section" class="c-section invisible">
+        <section id="colour-section" class="c-section">
             <div id="app">
                 <div id="controls-panel2">
                     <div class="mini-panel">
@@ -102,7 +102,7 @@
                     <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black', 'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }">
                         <span class="shadow"></span>
                     </div>
-                    <img src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
+                    <img class="invisible" src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
                 </div>
 
             </div>
