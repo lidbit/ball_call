@@ -43,26 +43,27 @@
 
 <body>
     <!-- using animate.css3 libary -->
-    <div class="slide" id="slidemarginleft">
-        <div class="inner">
-            <!-- <div id="orient-panel"> -->
-            <button id="b-small" class="b-action">Small</button>
-            <button id="b-hole" class="b-action">Hole</button>
-            <button id="b-tall" class="b-action">Tall</button>
-            <button id="b-colour" class="b-action">Colour Call</button>
-            <button id="b-black" class="b-action">Black All</button>
-            <button id="b-troll" class="b-action">Troll</button>
-            <button id="b-hall" class="b-action">Hall</button>
-            <button id="b-repeat" class="b-action">Repeat All</button>
-            <!-- </div> -->
+    <div id="slider-wrapper">
+        <div class="slide" id="slidemarginleft" >
+            <div class="inner">
+                <!-- <div id="orient-panel"> -->
+                <button id="b-small" class="b-action">Small</button>
+                <!-- <button id="b-hole" class="b-action">Hole</button> -->
+                <!-- <button id="b-tall" class="b-action">Tall</button> -->
+                <button id="b-colour" class="b-action">Colour Call</button>
+                <button id="b-black" class="b-action">Black All</button>
+                <button id="b-troll" class="b-action">Troll</button>
+                <button id="b-hall" class="b-action">Hall</button>
+                <button id="b-repeat" class="b-action">Repeat All</button>
+                <!-- </div> -->
+            </div>
+            <div id="app-name">
+                <button class="b-slide invisible"> &lt;&lt;</button>
+            </div>
+            
         </div>
-        <div id="app-name">
-            <button class="b-slide invisible"> &lt;&lt;</button>
-        </div>
-        <!-- <button class="b-slide"> </button> -->
     </div>
-
-    <section id="welcome-section">
+    <section id="welcome-section" > 
         <div id="welcome-text" class="lets-text">
             <div id="lets-div" class="textright">
                 <span id="lets-span">Lets take a </span>
@@ -75,107 +76,82 @@
 
     <div id="circle" class="circle-div"></div>
 
-    <div id="ball" class="ball jball position-fixed"></div>
-
-    <!-- <section id="colour-section" class="c-section invisible">
+    <!-- <div id="ball" class="ball jball position-fixed"></div> -->
+    <div id="vue-wrapper"> <!-- class="position-fixed">-->
+        <section id="colour-section" class="c-section invisible">
             <div id="app">
                 <div id="controls-panel2">
-                    
-                    <label id="size">Size</label>
-                    <input type="number" v-model="sizeNumber">
-                    <label id="hue">Hue</label>
-                    <input type="number" v-model="hueNumber">
-                    <label id="hue">Saturation</label>
-                    <input type="number" v-model="satNumber">
-                    <label id="hue">Lightness</label>
-                    <input type="number" v-model="lightNumber">
+                    <div class="mini-panel">
+                        <label id="size">Size</label>
+                        <input type="number" v-model="sizeNumber">
+                    </div>
+                    <div class="mini-panel">
+                        <label id="hue">Hue</label>
+                        <input type="number" v-model="hueNumber">
+                    </div>
+                    <div class="mini-panel">
+                        <label id="hue">Saturation</label>
+                        <input type="number" v-model="satNumber">
+                    </div>
+                    <div class="mini-panel">
+                        <label id="hue">Lightness</label>
+                        <input type="number" v-model="lightNumber">
+                    </div>
                 </div>
                 <div id="stage">
                     <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black', 'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }">
-                        <span class="shadow"></span> 
+                        <span class="shadow"></span>
                     </div>
+                    <img src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
                 </div>
-    
+
             </div>
-        </section> -->
-  
-    <div id="spacer"></div>
-    <div id="small-text" class="action-call-text" data-aos="zoom-in-left" data-aos-anchor-placement="center-bottom">
-        <span class="streachLow">And size it</span>
-        <span class="shortstreach"> Small </span>
-
+        </section>
+        <!-- <button class="b-slide"> </button> -->
     </div>
-
-    <!-- <div id="hole-text" class="action-call-text" data-aos="flip-left" data-aos-anchor-placement="center-bottom">
-        <span class="streachLow">Drop down the</span> Hole
-    </div>
-    <div id="tall-text" class="action-call-text" data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
-        <span>Let's
-            <em>make it</em>
-        </span> <span class="shortstreach">Tall</span>
-    </div> -->
-    <!-- <div id="trigger1"></div> -->
-    <div id="colour-text" class="action-call-text" data-aos="zoom-in-up" data-aos-anchor-placement="top-center">
-        <span class="streachLow">Stop!</span>
-        <span class="blackish-bold">Colour call</span>
-    </div>
-    <div id="black-text" class="action-call-text" data-aos="zoom-in-down" data-aos-anchor-placement="center-bottom">
-        <span class="blackish-bold">  Then Black</span>
-        <span data-aos="fade-left" class="streachHigh"> it All</span>
-    </div>
-    <div id="troll-text" class="action-call-text" data-aos="zoom-in-right" data-aos-anchor-placement="center-center">
-        Is it
-        <span data-aos="fade-right" class="streachHigh">a Troll?</span>
-    </div>
-    <div id="hall-text" class="action-call-text" data-aos="zoom-in-left" data-aos-anchor-placement="center-center">
-        <span class="blackish-med">Repeat </span>
-        <span data-aos="fade-left" class="streachLow">it All</span>
-    </div>
-
-    <!-- <div id="small-helper" class="helper"> Touch<br> Me </div>  -->
-
-
-    <!-- <img src="/assets/images/troll.png" height="600" width="600" alt="troll" id="pictroll" />
-                   <button id="shrink" >Shrink</button>
-                   <button id="unshrink" >Unshrink</button> -->
-
-
-    <section id="colour-section" class="c-section invisible">
-        <div id="app">
-            <div id="controls-panel2">
-                <!-- <input type="number" v-model="radiusNumber"> -->
-                <label id="size">Size</label>
-                <input type="number" v-model="sizeNumber">
-                <label id="hue">Hue</label>
-                <input type="number" v-model="hueNumber">
-                <label id="hue">Saturation</label>
-                <input type="number" v-model="satNumber">
-                <label id="hue">Lightness</label>
-                <input type="number" v-model="lightNumber">
-            </div>
-            <div id="stage">
-                <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black', 'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }">
-                    <!-- <span class="shadow"></span> -->
-                </div>
-            </div>
+    <div id="scroller-wrapper">
+        <div id="spacer"></div>
+        <div id="small-text" class="action-call-text" data-aos="zoom-in-left" data-aos-anchor-placement="center-bottom">
+            <span class="streachLow">And size it</span>
+            <span class="shortstreach"> Small </span>
 
         </div>
-    </section>
 
-    <section id="action-section">
-        <div id="text">
-            <p id="small-text" class="action-call-text">And make it small</p>
-            <p id="hole-text" class="action-call-text">Drop down the hole</p>
-            <p id="tall-text" class="action-call-text">Then make it tall</p>
-            <p id="colour-text" class="action-call-text">And Colour call</p>
-            <p id="black-text" class="action-call-text">Then Black it all</p>
-            <p id="troll-text" class="action-call-text">Is it a troll?</p>
-            <p id="hall-text" class="action-call-text">Run down the hall</p>
-            <p id="repeat-text" class="action-call-text">Repeat it all</p>
+        <div id="hole-text" class="action-call-text" data-aos="flip-left" data-aos-anchor-placement="center-bottom">
+            <span class="streachLow">Drop down the</span> Hole
         </div>
-    </section>
+        <div id="tall-text" class="action-call-text" data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
+            <span>Let's
+                <em>make it</em>
+            </span>
+            <span class="shortstreach">Tall</span>
+        </div>
+        <div id="trigger1"></div>
+        <div id="colour-text" class="action-call-text" data-aos="zoom-in-up" data-aos-anchor-placement="top-center">
+            <span class="streachLow">Stop!</span>
+            <span class="blackish-bold">Colour call</span>
+        </div>
+        <div id="black-text" class="action-call-text" data-aos="zoom-in-down" data-aos-anchor-placement="center-bottom">
+            <span class="blackish-bold"> Then Black</span>
+            <span data-aos="fade-left" class="streachHigh"> it All</span>
+        </div>
+
+        <div id="troll-text" class="action-call-text" data-aos="zoom-in-right" data-aos-anchor-placement="center-center">
+            Is it
+            <span data-aos="fade-right" class="streachHigh">a Troll?</span>
+        </div>
+        <div id="hall-text" class="action-call-text" data-aos="zoom-in-left" data-aos-anchor-placement="center-center">
+            <span class="blackish-med">Repeat </span>
+            <span data-aos="fade-left" class="streachLow">it All</span>
+        </div>
+
+        <!-- <div id="small-helper" class="helper"> Touch<br> Me </div>  -->
 
 
+
+        <button id="shrink">Shrink</button>
+        <button id="unshrink">Unshrink</button>
+    </div>
 
 </body>
 

@@ -1,6 +1,6 @@
  /* Circle/Ball app created by Lydia Douglas 2018 */
 
- /* This ia a playful app created in cooperation with my daughter(6years)
+ /* This ia a playful  created in cooperation with my daughter(6years)
  It is meant to ceducate in cretive fun way
  She is starting to read and work with larger numbers (hundreds)
  
@@ -15,16 +15,25 @@
  :root {
      --color-border: black;
      --text-color: lightgrey;
-     --text-color-dark: #17a7ac;
+  
      --ball-gradient-lt: hsl(300, 40%, 33%);
      --ball-gradient-dk: hsl(0, 10%, 20%);
      --ball-shadow: hsl(180, 15%, 26%);
      --color-footer: hsl(40, 6%, 91%);
      --font-size: 18px;
+    --text-color-neutral:lightgrey;
+     --text-color-dark: #17a7ac;
      --color-header: transparent;
      --font-playful: 'Gochi Hand';
      --font-cursive: 'Caveat';
      --font-choppy: 'Short Stack';
+     --purple-glass:rgba(107, 91, 149, 0.315);
+     --purple-glass-active:rgba(56, 46, 85, 0.562);
+     --text-color-light:  rgb(132, 190, 207);
+     --text-color-dark: rgb(4, 28, 63);
+     --text-color-bright-yl: rgb(203, 223, 116);
+     --text-color-bright-org: rgb(190, 112, 81);
+     --text-color-troll: rgb(2, 119, 84);
  }
 
  html {
@@ -49,20 +58,127 @@
  body {
      margin-top: 0px;
      margin-bottom: 0px;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     font-family: var(--playful),Verdana, Geneva, Tahoma, sans-serif;
      font-size: var(--font-size);
+     color: var(--text-color-neutral);
      height: 10000px;
      width: 100%;
      font-family: var(--font-choppy), Var(--font-playful), cursive, 'Courier New', Courier, monospace;
  }
+/*>>>>>>>>>>>>>>>>>>> helper classes  >>>>>>>>>>>>>>>>>>>>>>>>>*/
+.position-fixed {
+    position: fixed;
+}
+.position-unfixed {
+    position: relative;
+}
+/* related animation css plugin */
+.animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    /* visibility:visible; */
+}
 
- #welcome-text {
-     min-width: 95%;
-     min-width: height 2px;
-     margin: 0 auto;
-     margin-top: 5%;
+
+/* ********************* slider  **********************************/
+
+ /* this is the nav slider */
+ #slider-wrapper{
+    width:100%
+}
+ .slide {
+     position: relative;
+     overflow: hidden;
+     width: 100%;
+     margin-top: 0.1%;
  }
 
+ .slide .inner {
+     position: absolute;
+     left: 18%;
+     top: 0;
+     width: 100%;
+     /* margin-left: 3%; */
+     /* background-color: pink; */
+ }
+
+ .js .slide .inner {
+     display: none;
+ }
+
+ .b-action {
+     cursor: pointer;
+     background-color: var(--purple-glass);
+     border: 2px solid #17a7ac;
+     color: #17a7ac;
+     font-size: 22px;
+     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     min-width: 2.5%;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s;
+     padding-top: 10px;
+     z-index: 2;
+ }
+
+ .b-action:hover {
+     background-color: #4d9da0;
+     /* #1b75f7;*/
+     color: #9dd9e4ef;
+     transform: scale(1.1) translate(1px, 1px);
+ }
+
+ .b-action:active {
+     outline: none;
+     border: none;
+ }
+
+ .b-action:focus {
+     outline: 0;
+ }
+
+ #app-name {
+     float: right;
+     padding-right: 12%;
+ }
+
+ .b-slide {
+     cursor: pointer;
+     /* background-color: transparent; */
+     border: 2px solid #17a7ac;
+     border: 2px;
+     font-size: 2em;
+     color: var(--text-color-neutral);
+     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     transition: background-color 0.5s, color 0.8s, transform 0.5s;
+     background-color: rgba(19, 227, 241, 0.733);
+     margin-top: 1%;
+     z-index: 4;
+ }
+
+ .b-slide:hover {
+     background-color: rgba(107, 91, 149, 0.315);
+     /* #4d9da0; */
+     /* #1b75f7;*/
+     color: white;
+     transform: scale(1.1) translate(1px, 1px);
+ }
+
+ .b-slide:active {
+     outline: none;
+     border: none;
+ }
+
+ .b-slide:focus {
+     outline: 0;
+ }
+ /* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+/******************************* welcome text area ****************** */
+ #welcome-text {
+     min-width: 95%;
+     min-height:  2px;
+     margin: 0 auto;
+     /* margin-top: 5%; */
+ }
  .lets-text {
      font-family: var(--font-choppy);
      font-size: 3.5em;
@@ -72,40 +188,18 @@
      color: var(--text-color);
      display: flex;
      padding-left: 20%;
-     padding-bottom: 10px;
+     /* padding-bottom: 10px; */
  }
-
  #lets-div {
      text-align: right;
      margin-right: 0.5em;
  }
-
  #spacer {
      height: 60vh;
  }
+/***************** end welcome text area***************************** */
 
- #action-section {
-     min-width: 200px;
- }
 
- h4 {
-     font-family: var(--font-cursive);
-     font-size: 3em;
-     font-weight: 300;
-     background-color: rgba(107, 91, 149, 0.315);
-     width: 100%;
-     ;
-     text-align: center;
-     margin: 0 auto;
- }
-
- .position-fixed {
-     position: fixed;
- }
-
- .position-unfixed {
-     position: relative;
- }
 
  #circle {
      width: 400px;
@@ -164,16 +258,6 @@
      background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
      transform: rotateX(90deg) translateZ(-150px);
      z-index: 1;
- }
-
- .ball {
-     display: none;
- }
-
- .position-fixed {
-     position: fixed;
-     top: 25%;
-     left: 35%;
  }
 
  .shrink {
@@ -237,10 +321,6 @@
  }
 
  .t-ball-left {
-     display: none;
- }
-
- .c-section {
      display: none;
  }
 
@@ -318,6 +398,17 @@
 
  /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
+ #scroller-wrapper{
+    width:40%;
+    /* background-color:purple; */
+ }
+ #vue-wrapper{
+
+    width:60%;
+    float:right;
+    right:0%;
+    /* background-color:blue; */
+ }
  #app {
      position: relative;
      width: 100%;
@@ -325,23 +416,62 @@
      /* background:linear-gradient( var(--color-backgd), var(--color-backgd-dk));  */
  }
 
- #controls-panel {
+ /* .c-section {
+     display: none;
+ }  */
+ /* #controls-panel {
      /* background-color: hsl(180, 50%, 50%); */
-     color: hsl(0, 0%, 100%);
+    /* color: hsl(0, 0%, 100%);
      width: 15%;
      height: 100%;
-     float: left;
-     padding: 1%;
- }
+     float: left;*/
+     /*padding: 1%;
+ } */
 
  #controls-panel2 {
      /* background-color: hsl(180, 50%, 50%); */
+
      color: hsl(0, 0%, 100%);
-     width: 15%;
+     width: 20%;
      height: 100%;
      float: right;
+     margin-right:1%;
      padding: 1%;
+     display:flex;
+     flex-direction: column;
+     justify-content: space-around;
  }
+ .mini-panel{
+    background-color: var(--purple-glass);
+    border: 2px solid #17a7ac;
+     color: var(--text-color);
+     text-align: center;
+     padding:5%;
+     font-size: 1.2em;
+     /* width:100%; */
+     min-height:80px;
+ }
+ .mini-panel:hover{
+     transform: scale(1.1) translate(1px, 1px);
+ }
+ label, input{
+   
+    background-color: transparent;
+    color:inherit;
+    width:100px;
+    min-height: 20px;
+    border:none;
+    height: 45%;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 5%;
+
+}
+
+ input:active{
+    background-color:var(--purple-glass-active);
+    border:none;
+} 
 
  .circle-div {
      width: 100%;
@@ -350,112 +480,33 @@
  }
 
  #stage {
-     width: 300px;
-     height: 300px;
+     width: 400px;
+     height: 500px;
      display: inline-block;
-     margin: 20px;
-     perspective: 1200px;
-     perspective-origin: 50% 50%;
+     /* margin: 20px; */
+     /* perspective: 1200px; */
+     /* perspective-origin: 50% 50%; */
  }
 
+
+
+
+ 
  /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
- /* ********************* slider  **********************************/
+ #action-section {
+    min-width: 200px;
+}
 
- /* this is the nav slider */
-
- .slide {
-     position: relative;
-     overflow: hidden;
-     width: 100%;
-     margin-top: 0.1%;
- }
-
- .slide .inner {
-     position: absolute;
-     left: 18%;
-     top: 0;
-     width: 100%;
-     /* margin-left: 3%; */
-     /* background-color: pink; */
- }
-
- .js .slide .inner {
-     display: none;
- }
-
- .b-action {
-     cursor: pointer;
-     background-color: rgba(107, 91, 149, 0.315);
-     border: 2px solid #17a7ac;
-     color: #17a7ac;
-     font-size: 22px;
-     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     min-width: 2.5%;
-     transition: background-color 0.5s, color 0.8s, transform 0.5s;
-     padding-top: 10px;
-     z-index: 2;
- }
-
- .b-action:hover {
-     background-color: #4d9da0;
-     /* #1b75f7;*/
-     color: #415c4d;
-     transform: scale(1.1) translate(1px, 1px);
- }
-
- .b-action:active {
-     outline: none;
-     border: none;
- }
-
- .b-action:focus {
-     outline: 0;
- }
-
- #app-name {
-     float: right;
-     padding-right: 12%;
- }
-
- .b-slide {
-     cursor: pointer;
-     /* background-color: transparent; */
-     border: 2px solid #17a7ac;
-     border: 2px;
-     font-size: 2em;
-     color: var(--text-color-dark);
-     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     transition: background-color 0.5s, color 0.8s, transform 0.5s;
-     background-color: rgba(19, 227, 241, 0.733);
-     margin-top: 1%;
-     z-index: 4;
- }
-
- .b-slide:hover {
-     background-color: rgba(107, 91, 149, 0.315);
-     /* #4d9da0; */
-     /* #1b75f7;*/
-     color: white;
-     transform: scale(1.1) translate(1px, 1px);
- }
-
- .b-slide:active {
-     outline: none;
-     border: none;
- }
-
- .b-slide:focus {
-     outline: 0;
- }
-
- /* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
- .animated {
-     -webkit-animation-duration: 1.5s;
-     animation-duration: 1.5s;
-     /* visibility:visible; */
- }
+h4 {
+    font-family: var(--font-cursive);
+    font-size: 3em;
+    font-weight: 300;
+    background-color: rgba(107, 91, 149, 0.315);
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
 
  .action-call-text {
      padding-left: 4%;
@@ -496,4 +547,9 @@
      font-style: var(--choppy), Arial, Helvetica, sans-serif;
      font-weight: bold;
      font-size: 0.5em;
+ }
+
+ .position-fixed{
+    position:fixed;
+    z-index:105;
  }
