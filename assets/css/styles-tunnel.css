@@ -27,13 +27,15 @@
      --font-playful: 'Gochi Hand';
      --font-cursive: 'Caveat';
      --font-choppy: 'Short Stack';
-     --purple-glass:rgba(107, 91, 149, 0.315);
-     --purple-glass-active:rgba(56, 46, 85, 0.562);
+     --purple-glass:	hsla(257, 24%, 47%, 0.32);
+     --purple-glass-active:hsla(175, 56%, 68%, 0.32);
      --text-color-light:  rgb(132, 190, 207);
      --text-color-dark: rgb(4, 28, 63);
      --text-color-bright-yl: rgb(203, 223, 116);
      --text-color-bright-org: rgb(190, 112, 81);
      --text-color-troll: rgb(2, 119, 84);
+     --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
  }
 
  html {
@@ -62,7 +64,7 @@
      color: var(--text-color-neutral);
      height: 10000px;
      width: 100%;
-     font-family: var(--font-choppy), Var(--font-playful), cursive, 'Courier New', Courier, monospace;
+     font-family: var(--font-choppy), var(--font-playful),  var(--default-font);
      transition: background-color .5s ease-in-out;
      -moz-transition: background-color .5s ease-in-out;
      -webkit-transition: background-color .5s ease-in-out; 
@@ -88,8 +90,8 @@
 
 /* related animation css plugin */
 .animated {
-    -webkit-animation-duration: 1.5s;
-    animation-duration: 1.5s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
     /* visibility:visible; */
 }
 
@@ -98,20 +100,21 @@
 
  /* this is the nav slider */
  #slider-wrapper{
-    width:100%
+    width:100%;
+    margin-left:20%;
 }
  .slide {
      position: relative;
      overflow: hidden;
-     width: 100%;
-     margin-top: 0.1%;
+     width: 80%;
+     margin-top: .3%;
  }
 
  .slide .inner {
      position: absolute;
-     left: 18%;
+     left: 20%;
      top: 0;
-     width: 100%;
+     width: 80%;
      /* margin-left: 3%; */
      /* background-color: pink; */
  }
@@ -126,7 +129,7 @@
      border: 2px solid #17a7ac;
      color: #17a7ac;
      font-size: 22px;
-     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-family: var(--font-choppy), var(--default-font);
      min-width: 2.5%;
      transition: background-color 0.5s, color 0.8s, transform 0.5s;
      padding-top: 10px;
@@ -151,27 +154,27 @@
 
  #app-name {
      float: right;
-     padding-right: 12%;
+     /* padding-right: 20%; */
  }
 
  .b-slide {
      cursor: pointer;
      /* background-color: transparent; */
-     border: 2px solid #17a7ac;
+     /* border: 2px solid #4d9da0; */
      border: 2px;
      font-size: 2em;
      color: var(--text-color-neutral);
-     font-family: var(--font-choppy), 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-family: var(--font-choppy), var(--default-font);
      transition: background-color 0.5s, color 0.8s, transform 0.5s;
-     background-color: rgba(19, 227, 241, 0.733);
-     margin-top: 1%;
+      background-color:  transparent;/*rgba(19, 227, 241, 0.733); */
+     /* margin-top: 1%; */
+     margin-right:5px;
      z-index: 4;
+     
  }
 
  .b-slide:hover {
-     background-color: rgba(107, 91, 149, 0.315);
-     /* #4d9da0; */
-     /* #1b75f7;*/
+     background-color: 	hsla(257, 24%, 47%, 0.32);
      color: white;
      transform: scale(1.1) translate(1px, 1px);
  }
@@ -184,32 +187,46 @@
  .b-slide:focus {
      outline: 0;
  }
+ .selected-action{
+    /* background-color: var(--purple-glass-active); */
+    color: #ffffff;
+   
+ }
  /* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
 /******************************* welcome text area ****************** */
  #welcome-text {
-     min-width: 95%;
-     min-height:  2px;
+     min-width: 65%;
+     min-height:  80px;
      margin: 0 auto;
      /* margin-top: 5%; */
+     /* background-color: #4d9da0; */
+     z-index:3;
  }
  .lets-text {
-     font-family: var(--font-choppy);
-     font-size: 3.5em;
+     font-family: var(--font-cursive),var(--default-font);
+     font-size: 8em;
      min-width: 65%;
      letter-spacing: 0.1em;
      text-align: center;
      color: var(--text-color);
      display: flex;
-     padding-left: 20%;
+     padding-left: 17%;
+     padding-top: 3%;
+   
      /* padding-bottom: 10px; */
  }
  #lets-div {
      text-align: right;
-     margin-right: 0.5em;
- }
+     margin-right: 1em;
+     font-size: 0.3em;
+     font-family: var(--font-choppy), var(--font-choppy), var(--default-font);
+     bottom:50%;  
+    }
+      
+      /* for scroll animation */
  #spacer {
-     height: 60vh;
+     height: 80vh;
  }
 /***************** end welcome text area***************************** */
 
@@ -225,6 +242,29 @@
      margin: 0 auto;
      margin-top: 5%;
  }
+ .circle-div {
+    width: 100%;
+    min-height: 300px;
+    display: none;
+    /* background-color: hsl(34, 50%, 50%);  */
+}
+#jball-wrapper{
+    width: 70%;
+    min-height: 600px;
+    float:right;
+    position:relative;
+     background-color: #4d9da0; 
+}
+/* #jball-wrapper #jball{
+    position: absolute;
+    left:10.5%;
+    right:0;
+    top:24%;
+    bottom:0;
+    margin:0;
+     
+} */
+
 
  .ball {
      display: inline-block;
@@ -233,15 +273,13 @@
      border-radius: 50%;
      position: relative;
      margin: 0 auto;
-     margin-top: 5%;
      background: radial-gradient(circle at 50% 120%, var(--ball-gradient-lt), var(--ball-gradient-lt) 80%, var(--ball-gradient-lt) 90%);
      z-index: 2;
-     background-color:green;
+      background-color:green;
      transition: background-color .5s ease-in-out;
      -moz-transition: background-color .5s ease-in-out;
      -webkit-transition: background-color .5s ease-in-out; 
     -o-transition: background-color .5s ease-in-out; 
-    --almost-black: rgb(47, 47, 48);
  }
 
  .ball:before {
@@ -281,7 +319,7 @@
  }
 
  .shrink {
-     transition: width 2s, height 2s;
+     transition: width 1s, height 1s;
  }
 
  .shrink:hover {
@@ -289,9 +327,22 @@
      height: 50px;
  }
 
+ #tall-slider{
+    clear:both;
+    display: block;
+    width:50%;
+    background-color: #4d9da0;
+ }
  .invisible {
      opacity: 0;
  }
+ /* .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+   /* {
+    opacity: 0;
+  } */ 
 
  /* 
 [data-aos="circle"] {
@@ -348,17 +399,174 @@
      display: none;
  }
 
- @keyframes color-me-in {
-     0% {
-         background: lightblue;
-     }
-     /* Adding a step in the middle */
-     50% {
-         background: blue;
-     }
-     100% {
-         background: black;
-     }
+ .hidden {
+     display: none;
+ }
+
+ .visible {
+     display: block;
+ }
+
+ .helper {
+     width: 90px;
+     height: 90px;
+     border-radius: 90px;
+     text-align: center;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 5;
+     background-color: #58b6b975;
+     transition: opacity .6s;
+ }
+
+ /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+ #scroller-wrapper{
+    width:55%;
+    /* background-color:purple; */
+    z-index: -1;
+ }
+ #vue-wrapper{
+    width:75%;
+    left:30%;
+    float:right;
+    /* background-color:blue; */
+    /* background-color: hsl(90, 50%, 50%);  */
+ }
+ #app {
+     position: relative;
+     width: 100%;
+     height: 70vh;
+     /* background-color: hsl(67, 50%, 50%);  */
+     /* background:linear-gradient( var(--color-backgd), var(--color-backgd-dk));  */
+ }
+
+ /* #controls-panel {
+     /* background-color: hsl(180, 50%, 50%); */
+    /* color: hsl(0, 0%, 100%);
+     width: 15%;
+     height: 100%;
+     float: left;*/
+     /*padding: 1%;
+ } */
+
+ #controls-panel2 {
+     /* background-color: hsl(180, 50%, 50%); */
+
+     color: hsl(0, 0%, 100%);
+     width: 28%;
+     height: 100%;
+     float: right;
+     margin-right:4%;
+     padding: 1%;
+     display:flex;
+     flex-direction: column;
+     justify-content: space-around;
+     /* background-color: hsl(180, 50%, 50%);  */
+ }
+ .mini-panel{
+    background-color: var(--purple-glass);
+    border: 2px solid #17a7ac;
+     color: var(--text-color);
+     text-align: center;
+     padding:5%;
+     font-size: 1.2em;
+     /* width:100%; */
+     min-height:80px;
+     min-width:150px;
+ }
+ .mini-panel:hover{
+     transform: scale(1.1) translate(1px, 1px);
+ }
+ label, input{
+    background-color: transparent;
+    color:inherit;
+    width:100%;
+    min-height: 20px;
+    border:none;
+    font-size: 1em;
+    text-align: center;
+    margin-top: 5%;
+}
+
+ #stage {
+     width: 600px;
+     height: 600px;
+     position:relative;
+ }
+ #pictroll{
+    width: 600px;
+    height: 600px;
+    position: absolute;
+    pointer-events: none;
+    margin: 0 auto;
+    z-index:7;
+}
+#stage .ball{
+    position: absolute;
+    margin: 0 auto;
+    top:24.5%;
+    left:15.5%;
+}
+ 
+ /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+h4 {
+    font-family: var(--font-cursive),var(--default-font);
+    font-size: 3em;
+    font-weight: 300;
+    background-color: rgba(107, 91, 149, 0.315);
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+ .action-call-text {
+     padding-left: 4%;
+     font-family: var(--playful), var(--default-font);
+     font-size: 2em;
+     width:30%;
+     margin-bottom:5%;
+     z-index:10;
+ }
+
+ .shortstreach {
+     font-style: var(--cursive),var(--default-font);
+     font-size: 2em;
+     letter-spacing: 0.02em;
+ }
+
+ .blackish-bold {
+     font-style: var(--choppy),var(--default-font);
+     font-weight: bold;
+     font-size: 2em;
+ }
+
+ .streachLow {
+     font-style: var(--cursive), var(--default-font);
+     font-weight: bold;
+     font-size: 2.5;
+     letter-spacing: 0.2em;
+ }
+
+ .streachHigh {
+     font-style: var(--font-playful), var(--default-font);
+     font-weight: 300;
+     font-size: 1.5em;
+     letter-spacing: 0.07em;
+ }
+
+ .blackish-med {
+     font-style: var(--choppy), var(--default-font);
+     font-weight: bold;
+     font-size: 0.5em;
+ }
+
+ .position-fixed{
+    position:fixed;
+    /* z-index:20; */
  }
 
  /**************** initial animations *******************/
@@ -394,184 +602,3 @@
     opacity:0;
     animation:fade-in-right ease 2s forwards;
   } */
-
- .hidden {
-     display: none;
- }
-
- .visible {
-     display: block;
- }
-
- .helper {
-     width: 90px;
-     height: 90px;
-     border-radius: 90px;
-     text-align: center;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     z-index: 5;
-     background-color: #58b6b975;
-     transition: opacity .6s;
- }
-
- /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
- #scroller-wrapper{
-    width:40%;
-    /* background-color:purple; */
- }
- #vue-wrapper{
-
-    width:60%;
-    float:right;
-    right:0%;
-    /* background-color:blue; */
- }
- #app {
-     position: relative;
-     width: 100%;
-     height: 60vh;
-     /* background:linear-gradient( var(--color-backgd), var(--color-backgd-dk));  */
- }
-
- /* .c-section {
-     display: none;
- }  */
- /* #controls-panel {
-     /* background-color: hsl(180, 50%, 50%); */
-    /* color: hsl(0, 0%, 100%);
-     width: 15%;
-     height: 100%;
-     float: left;*/
-     /*padding: 1%;
- } */
-
- #controls-panel2 {
-     /* background-color: hsl(180, 50%, 50%); */
-
-     color: hsl(0, 0%, 100%);
-     width: 20%;
-     height: 100%;
-     float: right;
-     margin-right:1%;
-     padding: 1%;
-     display:flex;
-     flex-direction: column;
-     justify-content: space-around;
- }
- .mini-panel{
-    background-color: var(--purple-glass);
-    border: 2px solid #17a7ac;
-     color: var(--text-color);
-     text-align: center;
-     padding:5%;
-     font-size: 1.2em;
-     /* width:100%; */
-     min-height:80px;
-     min-width:150px;
- }
- .mini-panel:hover{
-     transform: scale(1.1) translate(1px, 1px);
- }
- label, input{
-   
-    background-color: transparent;
-    color:inherit;
-    width:100px;
-    min-height: 20px;
-    border:none;
-    height: 45%;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 5%;
-
-}
-
- input:active{
-    background-color:var(--purple-glass-active);
-    border:none;
-} 
-
- .circle-div {
-     width: 100%;
-     min-height: 300px;
-     display: none;
- }
-
- #stage {
-     width: 400px;
-     height: 500px;
-     display: inline-block;
-     /* margin: 20px; */
-     /* perspective: 1200px; */
-     /* perspective-origin: 50% 50%; */
- }
-
-
-
-
- 
- /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
- #action-section {
-    min-width: 200px;
-}
-
-h4 {
-    font-family: var(--font-cursive);
-    font-size: 3em;
-    font-weight: 300;
-    background-color: rgba(107, 91, 149, 0.315);
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
-
- .action-call-text {
-     padding-left: 4%;
-     font-family: var(--playful), Arial, Helvetica, sans-serif;
-     font-size: 2em;
-     width:30%;
-     margin-bottom:5%;
-     z-index:100;
- }
-
- .shortstreach {
-     font-style: var(--cursive), Arial, Helvetica, sans-serif;
-     font-size: 2em;
-     letter-spacing: 0.02em;
- }
-
- .blackish-bold {
-     font-style: var(--choppy), Arial, Helvetica, sans-serif;
-     font-weight: bold;
-     font-size: 2em;
- }
-
- .streachLow {
-     font-style: var(--cursive), Arial, Helvetica, sans-serif;
-     font-weight: bold;
-     font-size: 2.5;
-     letter-spacing: 0.2em;
- }
-
- .streachHigh {
-     font-style: var(--font-playful), Arial, Helvetica, sans-serif;
-     font-weight: 300;
-     font-size: 1.5em;
-     letter-spacing: 0.07em;
- }
-
- .blackish-med {
-     font-style: var(--choppy), Arial, Helvetica, sans-serif;
-     font-weight: bold;
-     font-size: 0.5em;
- }
-
- .position-fixed{
-    position:fixed;
-    z-index:105;
- }
-
