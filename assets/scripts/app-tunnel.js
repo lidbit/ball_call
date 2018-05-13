@@ -127,16 +127,14 @@ function animateWelcome() {
     $("#controls-panel2").hide(0);
 
     //this is the animation for welcome text and cirle/ball switch over
-    $(".t-circle-left").fadeIn(1500).delay(1000).fadeOut(800,function () {
+    $(".t-circle-left").fadeIn(1500).delay(1000).animate({ "width": "0","opacity": "0.0",
+}, 1000,function () {
         $(".t-ball-left").delay(800).fadeIn(1500);
     });
-    $(".circle-div").fadeIn(1500).delay(6500).animate({
-        "width": "0",
-        "opacity": "0.0",
+    $(".circle-div").fadeIn(1500).delay(3500).animate({ "width": "0","opacity": "0.0","height": "0"
     }, 1500, function () {
-        $(".circle-div").slideUp(800);
-
-        $(".ball").fadeIn(600).addClass('animated bounceInDown');
+        $(".circle-div").slideUp(1200, function(){$(".ball").fadeIn(600).addClass('animated bounceInDown');});
+        
         setTimeout(function () {
             $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({ height: "+=90px" }, 600).animate({ height: "-=90px" }, 600);
         }, 1000);
