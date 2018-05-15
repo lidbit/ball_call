@@ -35,21 +35,15 @@
 </head>
 
 <body>
-    <!-- using animate.css3 libary -->
-    <div id="main" >
+    <div id="main">
         <div id="slider-wrapper">
             <div class="slide" id="slidemarginleft">
                 <div class="inner">
-                    <!-- <div id="orient-panel"> -->
                     <button id="b-small" class="b-action">Small</button>
-                    <!-- <button id="b-hole" class="b-action">Hole</button> -->
-                    <!-- <button id="b-tall" class="b-action">Tall</button> -->
                     <button id="b-colour" class="b-action">Colour Call</button>
                     <button id="b-black" class="b-action">Black All</button>
                     <button id="b-troll" class="b-action">Troll</button>
-                    <!-- <button id="b-hall" class="b-action">Hall</button> -->
                     <button id="b-repeat" class="b-action">Repeat All</button>
-                    <!-- </div> -->
                 </div>
                 <div id="app-name">
                     <button class="b-slide invisible"> &lt;&lt;</button>
@@ -68,28 +62,24 @@
         </section>
 
         <div id="circle" class="circle-div"></div>
-        <!-- <div id="jball-wrapper">
-        <div id="jball" class="ball jball "></div>
-        <img id="pictroll" src="/assets/images/troll.png" height="600" width="600" alt="troll" >
-    </div> -->
 
         <div id="vue-wrapper">
             <section id="colour-section" class="c-section">
                 <div id="app">
                     <div id="controls-panel2">
-                        <div class="mini-panel">
+                        <div class="mini-panel" id="size-panel">
                             <label id="size">Size</label>
                             <input type="number" v-model="sizeNumber">
                         </div>
-                        <div class="mini-panel">
+                        <div class="mini-panel2">
                             <label id="hue">Hue</label>
                             <input type="number" v-model="hueNumber">
                         </div>
-                        <div class="mini-panel">
+                        <div class="mini-panel2">
                             <label id="hue">Saturation</label>
                             <input type="number" v-model="satNumber">
                         </div>
-                        <div class="mini-panel">
+                        <div class="mini-panel2">
                             <label id="hue">Lightness</label>
                             <input type="number" v-model="lightNumber">
                         </div>
@@ -98,57 +88,52 @@
                         <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black',
                      'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 
                      'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
-                        <!-- <span class="shadow"></span>  -->
                         <img id="pictroll" class="invisible" src="/assets/images/troll.png" height="600" width="600" alt="troll">
                     </div>
                 </div>
             </section>
-            <!-- <button class="b-slide"> </button> -->
         </div>
         <div id="tall-slider"></div>
 
     </div>
     <div id="scroller-wrapper">
-        <!-- <div id="spacer"></div> -->
-        <!-- data-aos-anchor-placement="bottom-center" -->
-        <div id="small-text" class="action-call-text" data-aos="zoom-in-left" >
+        <div id="spacer"></div>
+
+        <div id="let-text" class="action-call-text" data-aos="zoom-in" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="top-bottom">
+            <span class="blackish-med">Lets take a </span>
+            <span class="blackish-bold">Ball</span>
+        </div>
+
+        <div id="small-text" class="action-call-text" data-aos="zoom-in" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="top-center">
             <span class="streachLow">And size it</span>
-            <span class="shortstreach"> Small </span>
+            <span class="blackish-bold"> Small </span>
         </div>
 
-        <div id="hole-text" class="action-call-text" data-aos="flip-left" data-aos-anchor-placement="center-bottom">
-            <span class="streachLow">Drop down the</span> Hole
-        </div>
-        <div id="tall-text" class="action-call-text" data-aos="zoom-in-down" data-aos-anchor-placement="center-center">
-            <span>Let's
-                <em>make it</em>
-            </span>
-            <span class="shortstreach">Tall</span>
-        </div>
-        <div id="trigger1"></div>
-        <div id="colour-text" class="action-call-text" data-aos="zoom-in-up" data-aos-anchor-placement="top-center">
-            <span class="streachLow">Stop!</span>
-            <span class="blackish-bold">Colour call</span>
-        </div>
-        <div id="black-text" class="action-call-text" data-aos="zoom-in-down" data-aos-anchor-placement="center-bottom">
-            <span class="blackish-bold"> Then Black</span>
-            <span data-aos="fade-left" class="streachHigh"> it All</span>
+        <div id="colour-text" class="action-call-text" data-aos="fade-down-left" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="top-center">
+            <span>Then</span>
+            <span class="shortstreach">Colour call</span>
         </div>
 
-        <div id="troll-text" class="action-call-text" data-aos="zoom-in-right" data-aos-anchor-placement="center-center">
-            Is it
-            <span data-aos="fade-right" class="streachHigh">a Troll?</span>
+        <div id="black-text" class="action-call-text" data-aos="fade-left" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="top-center">
+            <span>Then </span>
+            <span class="blackish-bold"> Black</span>
+            <span> it All</span>
         </div>
-        <div id="hall-text" class="action-call-text" data-aos="zoom-in-left" data-aos-anchor-placement="center-center">
+
+        <div id="troll-text" class="action-call-text" data-aos="fade-up-left" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="bottom-bottom">
+            <span>Is it a</span>
+            <span class="blackish-bold"> Troll?</span>
+        </div>
+
+        <div id="hall-text" class="action-call-text" data-aos="zoom-in" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="bottom-bottom">
             <span class="blackish-med">Repeat </span>
-            <span data-aos="fade-left" class="streachLow">it All</span>
+            <span class="streachHigh"> it all</span>
         </div>
-        <div>the end</div>
-        <!-- <div id="small-helper" class="helper"> Touch<br> Me </div>  -->
-        <!-- <button id="shrink">Shrink</button>
-        <button id="unshrink">Unshrink</button> -->
-    </div>
 
+    </div>
+    <footer>
+        <h1>THE END</h1>
+    </footer>
 </body>
 
 

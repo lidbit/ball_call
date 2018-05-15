@@ -10,35 +10,14 @@ $(document).ready(function () {
         duration: 800,
         easing: 'ease-in-out-back'
     });
+    window.addEventListener('load', function() {
+        AOS.refresh();
+      });
 
     initVue();
     initSlider();
-    animateWelcome() 
-    
-
-    // //this is the animation for welcome text and cirle/ball switch over
-    // $(".t-circle-left").fadeIn(2500).delay(1000).slideUp(800, function () {
-    //     $(".t-ball-left").delay(800).fadeIn(2500);
-    // });
-    // $(".circle-div").fadeIn(1500).delay(1000).animate({
-    //     "width": "1%",
-    //     "opacity": "0.1",
-    // }, 3500, function () {
-    //     $(".circle-div").hide();
-    //     $(".jball").fadeIn(800).addClass('animated bounceInDown');
-    //     setTimeout(function() {
-    //         $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({height:"+=90px"}, 600).animate({height:"-=90px"}, 600);
-    //     }, 1000);
-    //     setTimeout(function(){$(".b-slide").trigger("click");}, 2000);
-    //     setTimeout(function(){
-    //         $("#welcome-section").addClass('animated fadeOutRight');
-    //     }, 4000);
-
-    // });
-
-
-
-    //  $( "#ball-span" ).slideDown( 600 ).delay( 2000 ).fadeIn( 400 );
+    animateWelcome(); 
+    scrollReady();
 });
 
 //initialising document
@@ -58,13 +37,10 @@ function initVue() {
         el: '#app',
         data: data
     });
-
-    // $("#colour-section").hide();
-    // $("#pictroll").hide();
 }
 
 function initSlider() {
-    //creating left slid out area fr buttons
+    //creating left slide out area fr buttons
     var $marginLefty = $('#slidemarginleft div.inner');
     $marginLefty.css({
         marginLeft: $marginLefty.outerWidth() + 'px',
@@ -81,21 +57,14 @@ function initSlider() {
 
     $("#b-small").click(function () {
         $(this).toggleClass("selected-action");
-        $( "#controls-panel2 span:first-child" ).toggle(800);
-        // $(".ball").addClass("shrink");
-    });
-    $("#b-hole").click(function () {
-        $(this).toggleClass("selected-action");
-        //to be implemented at later stage
-    });
-    $("#b-tall").click(function () {
-        $(this).toggleClass("selected-action");
-        $("#tall-slider").slideUp(600).delay(1600).slideDown(600);
-       //to be implemented at later stage
+        $("#size-panel").toggle(800); 
+
     });
     $("#b-colour").click(function () {
         $(this).toggleClass("selected-action");
-        $("#controls-panel2").toggle(800);
+        $(".mini-panel2").toggle(800);
+        // $("#color").toggle(800);
+        // $("#hue").toggle(800);
     });
     $("#b-black").click(function () {
         $(this).toggleClass("selected-action");
@@ -112,12 +81,12 @@ function initSlider() {
             }
         );
     });
-    $("#b-hall").click(function () {
-        $(this).toggleClass("selected-action");
-     //to be implemented at later stage
-    });
+
     $("#b-repeat").click(function () {
-    //    $(".b-slide").animate({ scrollTop: 0 }, "slow");
+        $(".ball").fadeIn(800);
+        $("#vue-wrapper").fadeIn(800);
+        $("#slider-wrapper").fadeIn(800);
+        $("#scroller-wrapper").fadeIn(800);
         window.location.reload();
     });
 }
@@ -125,8 +94,8 @@ function initSlider() {
 function animateWelcome() {
     $(".circle-div").hide(0);
     $(".ball").hide(0);
-    $("#controls-panel2").hide(0);
-
+    $(".mini-panel").hide(0);
+    $(".mini-panel2").hide(0);
     //this is the animation for welcome text and cirle/ball switch over
     $(".t-circle-left").fadeIn(1500).delay(1000).animate({ "width": "0","opacity": "0.0",
 }, 1000,function () {
@@ -142,10 +111,19 @@ function animateWelcome() {
         setTimeout(function () { $(".b-slide").trigger("click"); }, 2000);
         setTimeout(function () {
             $("#welcome-section").addClass('animated fadeOutRight').slideUp(1200);
-            $("#spacer").slideUp();
+            // $("#spacer").slideUp();
             // $("#main").addClass("vue-wrapper");
         }, 4000);
         
     });
+}
+
+function scrollReady(){
+
+         $("#vue-wrapper").addClass("position-fixed");
+        // $(".control-panel2").addClass("position-fixed");
+        // $(".b-slider").addClass("position-fixed");
+        // $(".helper").addClass("position-fixed");
+  
 }
 

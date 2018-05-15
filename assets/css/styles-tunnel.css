@@ -62,7 +62,7 @@
      margin-bottom: 0px;
      font-size: var(--font-size);
      color: var(--text-color-neutral);
-     height: 10000px;
+     /* height: 10000px; */
      width: 100%;
      font-family: var(--font-choppy), var(--font-playful),  var(--default-font);
      transition: background-color .5s ease-in-out;
@@ -226,7 +226,8 @@
       
       /* for scroll animation */
  #spacer {
-     height: 80vh;
+    width:20%;
+    height: 80vh;
  }
 /***************** end welcome text area***************************** */
 
@@ -277,6 +278,8 @@
      z-index: 2;
       background-color:green;
      transition: background-color .5s ease-in-out;
+     transition: width 1s ease-in-out;
+     transition: height 1s ease-in-out;
      -moz-transition: background-color .5s ease-in-out;
      -webkit-transition: background-color .5s ease-in-out; 
     -o-transition: background-color .5s ease-in-out; 
@@ -318,14 +321,8 @@
      z-index: 1;
  }
 
- .shrink {
-     transition: width 1s, height 1s;
- }
 
- .shrink:hover {
-     width: 50px;
-     height: 50px;
- }
+
 
  #tall-slider{
     clear:both;
@@ -356,6 +353,7 @@
     opacity:1;
 } */
 
+
  @keyframes fade-in-right {
      from {
          opacity: 0;
@@ -385,6 +383,18 @@
      to {
          transform: scaleX(1);
      }
+ }
+ @keyframes shrink-ball {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+.shrink {
+     transition: width 1s, height 1s; 
  }
 
  .t-circle-left {
@@ -423,49 +433,38 @@
  /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
  #scroller-wrapper{
-    width:55%;
-    /* background-color:purple; */
+    width:20%;
     z-index: -1;
  }
  #vue-wrapper{
     width:75%;
     left:30%;
     float:right;
-    /* background-color:blue; */
-    /* background-color: hsl(90, 50%, 50%);  */
+
  }
  #app {
      position: relative;
      width: 100%;
      height: 70vh;
-     /* background-color: hsl(67, 50%, 50%);  */
-     /* background:linear-gradient( var(--color-backgd), var(--color-backgd-dk));  */
+   
  }
 
- /* #controls-panel {
-     /* background-color: hsl(180, 50%, 50%); */
-    /* color: hsl(0, 0%, 100%);
-     width: 15%;
-     height: 100%;
-     float: left;*/
-     /*padding: 1%;
- } */
 
  #controls-panel2 {
-     /* background-color: hsl(180, 50%, 50%); */
 
      color: hsl(0, 0%, 100%);
      width: 28%;
      height: 100%;
      float: right;
      margin-right:4%;
+     margin-top:1%;
      padding: 1%;
      display:flex;
      flex-direction: column;
      justify-content: space-around;
-     /* background-color: hsl(180, 50%, 50%);  */
+     
  }
- .mini-panel{
+ .mini-panel, .mini-panel2{
     background-color: var(--purple-glass);
     border: 2px solid #17a7ac;
      color: var(--text-color);
@@ -476,7 +475,7 @@
      min-height:80px;
      min-width:150px;
  }
- .mini-panel:hover{
+ .mini-panel:hover, .mini-panel2:hover{
      transform: scale(1.1) translate(1px, 1px);
  }
  label, input{
@@ -512,7 +511,6 @@
  
  /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-
 h4 {
     font-family: var(--font-cursive),var(--default-font);
     font-size: 3em;
@@ -524,30 +522,30 @@ h4 {
 }
 
  .action-call-text {
-     padding-left: 4%;
+     padding-left: 10%;
      font-family: var(--playful), var(--default-font);
      font-size: 2em;
-     width:30%;
      margin-bottom:5%;
+     padding: 30px 10px;
      z-index:10;
  }
 
  .shortstreach {
      font-style: var(--cursive),var(--default-font);
-     font-size: 2em;
+     font-size: 1.8em;
      letter-spacing: 0.02em;
  }
 
  .blackish-bold {
      font-style: var(--choppy),var(--default-font);
      font-weight: bold;
-     font-size: 2em;
+     font-size: 2.5em;
  }
 
  .streachLow {
      font-style: var(--cursive), var(--default-font);
      font-weight: bold;
-     font-size: 2.5;
+     font-size: 0.5em;
      letter-spacing: 0.2em;
  }
 
@@ -561,44 +559,11 @@ h4 {
  .blackish-med {
      font-style: var(--choppy), var(--default-font);
      font-weight: bold;
-     font-size: 0.5em;
+     font-size: 1em;
  }
 
  .position-fixed{
     position:fixed;
-    /* z-index:20; */
  }
 
- /**************** initial animations *******************/
 
- /*  'let take a' animation */
-
- /* .textright, #circle-section {
-    opacity: 0;
-    animation: fade-in-right ease 1.9s forwards;
-  } */
-
- /* 'circle' animation*/
-
- /* .textleft  {
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: grow-left cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s forwards;
-    animation-delay: 1s;
-  } */
-
- /* circle roll in */
-
- /* #circle-section{
-    animation-delay: 1s;
-  }
-
-  .textleft {
-    opacity: 0;
-    animation: fade-in-left ease 1.9s forwards;
-  } */
-
- /* #ball-span {
-    opacity:0;
-    animation:fade-in-right ease 2s forwards;
-  } */
