@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!-- Colour Quiz by Lydia Douglas -->
+<!-- Please read the README file for app explanation -->
 <html lang="en">
 
 <head>
@@ -35,9 +36,12 @@
 </head>
 
 <body>
-    <div id="main">
+    <!-- the main action happens here -->
+    
+    <!-- thisis the control for the ball manipulations contained in the slider -->
         <div id="slider-wrapper">
             <div class="slide" id="slidemarginleft">
+                <!-- buttons -->
                 <div class="inner">
                     <button id="b-small" class="b-action">Small</button>
                     <button id="b-colour" class="b-action">Colour Call</button>
@@ -45,12 +49,13 @@
                     <button id="b-troll" class="b-action">Troll</button>
                     <button id="b-repeat" class="b-action">Repeat All</button>
                 </div>
+                <!-- clicking this button rolls the slider out/rolls it in -->
                 <div id="app-name">
                     <button class="b-slide invisible"> &lt;&lt;</button>
                 </div>
             </div>
         </div>
-
+        <!-- text at the start of the app-->
         <section id="welcome-section">
             <div id="welcome-text" class="lets-text">
                 <div id="lets-div" class="textright">
@@ -60,45 +65,48 @@
                 <div class="t-ball-left">ball</div>
             </div>
         </section>
-
+        <!-- the circle at the start -->
         <div id="circle" class="circle-div"></div>
 
+        <!-- wrapper allows for ball and controls to "float" when strolling text -->
         <div id="vue-wrapper">
-            <!-- <section id="colour-section" class="c-section"> -->
-                <div id="app">
-                    <div id="controls-panel2">
-                        <div class="mini-panel" id="size-panel">
-                            <label id="size">Size</label>
-                            <input type="number" v-model="sizeNumber">
-                        </div>
-                        <div class="mini-panel2">
-                            <label id="hue">Hue</label>
-                            <input type="number" v-model="hueNumber">
-                        </div>
-                        <div class="mini-panel2">
-                            <label id="hue">Saturation</label>
-                            <input type="number" v-model="satNumber">
-                        </div>
-                        <div class="mini-panel2">
-                            <label id="hue">Lightness</label>
-                            <input type="number" v-model="lightNumber">
-                        </div>
+                <!-- vue app container -->
+            <div id="app">
+                <div id="controls-panel2">
+                    <!-- panels for manipulating ball -->
+                    <div class="mini-panel" id="size-panel">
+                        <label id="size">Size</label>
+                        <input type="number" v-model="sizeNumber">
                     </div>
-                    <div id="stage">
-                        <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black',
-                     'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 
-                     'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
-                        <img id="pictroll" class="invisible" src="/assets/images/troll.png" height="600" width="600" alt="troll">
+                    <div class="mini-panel2">
+                        <label id="hue">Hue</label>
+                        <input type="number" v-model="hueNumber">
+                    </div>
+                    <div class="mini-panel2">
+                        <label id="hue">Saturation</label>
+                        <input type="number" v-model="satNumber">
+                    </div>
+                    <div class="mini-panel2">
+                        <label id="hue">Lightness</label>
+                        <input type="number" v-model="lightNumber">
                     </div>
                 </div>
-            <!-- </section> -->
+                <!-- ball and troll live here -->
+                <div id="stage">
+                    <!-- ball with values set by the user -->
+                    <div class="ball" :style="{ 'background':'radial-gradient( circle at 100px 100px, transparent, black',
+                     'width':sizeNumber + 'px', 'height':sizeNumber + 'px', 
+                     'background-color': 'hsl(' +hueNumber+', '+satNumber+'%, '+ lightNumber +'%)' }"></div>
+                    <img id="pictroll" class="invisible" src="/assets/images/troll.png" height="600" width="600" alt="troll">
+                </div>
+            </div>
         </div>
         <div id="tall-slider"></div>
 
-    </div>
+    <!-- this is the scroller for the little rhyme  -->
     <div id="scroller-wrapper">
         <div id="spacer"></div>
-
+         <!-- text appear and disappears when scrolling    -->
         <div id="let-text" class="action-call-text" data-aos="zoom-in" data-aos-anchor="#vue-wrapper" data-aos-anchor-placement="top-bottom">
             <span class="blackish-med">Lets take a ..</span>
             <span class="blackish-bold">Ball</span>
@@ -131,9 +139,12 @@
         </div>
 
     </div>
-    <footer>
-        <h1>Created by Lydia Douglas </h1>
+
+    <!--footer section-->
+    <footer id="footer" role="contentinfo">
+        <p>&copy; copyright Lydia Douglas. 2018</p>
     </footer>
+
 </body>
 
 

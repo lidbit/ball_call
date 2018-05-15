@@ -1,23 +1,31 @@
-/* Circles app created by Lydia Douglas 2018 */
+/* Ball Call app created by Lydia Douglas 2018 */
 
-/*** declare global variables **/
-var $currentId = $("#welcome_section");
+
 
 //calling init function
 $(document).ready(function () {
+    /*** hide  **/
+    $(".circle-div").hide(0);
+    $(".ball").hide(0);
+    $(".mini-panel").hide(0);
+    $(".mini-panel2").hide(0);
 
+    // getting ready to scroll
     AOS.init({
         duration: 800,
         easing: 'ease-in-out-back'
     });
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
         AOS.refresh();
-      });
+    });
 
+    // setting up vue
     initVue();
+    //setting up slider
     initSlider();
-    animateWelcome(); 
-    
+    //start animations
+    animateWelcome();
+
 });
 
 //initialising document
@@ -39,7 +47,7 @@ function initVue() {
 }
 
 function initSlider() {
-    //creating left slide out area fr buttons
+    //creating left slide out area for buttons
     var $marginLefty = $('#slidemarginleft div.inner');
     $marginLefty.css({
         marginLeft: $marginLefty.outerWidth() + 'px',
@@ -54,24 +62,26 @@ function initSlider() {
         });
     });
 
+    //buttons and their actions
     $("#b-small").click(function () {
         $(this).toggleClass("selected-action");
-        $("#size-panel").toggle(800); 
+        $("#size-panel").toggle(800);
 
     });
     $("#b-colour").click(function () {
         $(this).toggleClass("selected-action");
         $(".mini-panel2").toggle(800);
-        // $("#color").toggle(800);
-        // $("#hue").toggle(800);
     });
     $("#b-black").click(function () {
         $(this).toggleClass("selected-action");
         $("body").toggleClass("black-all");
     });
+    //troll will apear and disappear on button
+    //to play hide and seek the user needs to point at troll first
     $("#b-troll").click(function () {
         $(this).toggleClass("selected-action");
         $("#pictroll").toggleClass("invisible");
+
         $(".ball").hover(
             function () {
                 $('#pictroll').fadeIn(600);
@@ -80,7 +90,7 @@ function initSlider() {
             }
         );
     });
-
+    //repaet button will restart the app
     $("#b-repeat").click(function () {
         $(".ball").fadeIn(800);
         $("#vue-wrapper").fadeIn(800);
@@ -91,16 +101,15 @@ function initSlider() {
 }
 
 function animateWelcome() {
-    $(".circle-div").hide(0);
-    $(".ball").hide(0);
-    $(".mini-panel").hide(0);
-    $(".mini-panel2").hide(0);
+
     //this is the animation for welcome text and cirle/ball switch over
-    $(".t-circle-left").fadeIn(1500).delay(1000).animate({ "width": "0","opacity": "0.0",
-}, 1000,function () {
+    $(".t-circle-left").fadeIn(1500).delay(1000).animate({
+        "width": "0", "opacity": "0.0",
+    }, 1000, function () {
         $(".t-ball-left").delay(800).fadeIn(1500);
     });
-    $(".circle-div").fadeIn(1500).delay(3500).animate({ "width": "0","opacity": "0.0","height": "0"
+    $(".circle-div").fadeIn(1500).delay(3500).animate({
+        "width": "0", "opacity": "0.0", "height": "0"
     }, 1500, function () {
         $(".ball").fadeIn(1200).addClass('animated bounceInDown');
         $(".circle-div").slideUp(600);
@@ -110,14 +119,14 @@ function animateWelcome() {
         setTimeout(function () { $(".b-slide").trigger("click"); }, 2000);
         setTimeout(function () {
             $("#welcome-section").addClass('animated fadeOutRight').slideUp(1200);
-            
+
         }, 4000);
         scrollReady();
     });
-    
-}
 
-function scrollReady(){
-         $("#vue-wrapper").addClass("position-fixed");
+}
+// fixing the ball in levitation position this seperate function as it will be extended later.
+function scrollReady() {
+    $("#vue-wrapper").addClass("position-fixed");
 }
 
