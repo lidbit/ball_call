@@ -81,6 +81,7 @@ function initSlider() {
 
     $("#b-small").click(function () {
         $(this).toggleClass("selected-action");
+        $( "#controls-panel2 span:first-child" ).toggle(800);
         // $(".ball").addClass("shrink");
     });
     $("#b-hole").click(function () {
@@ -133,16 +134,18 @@ function animateWelcome() {
     });
     $(".circle-div").fadeIn(1500).delay(3500).animate({ "width": "0","opacity": "0.0","height": "0"
     }, 1500, function () {
-        $(".circle-div").slideUp(1200, function(){$(".ball").fadeIn(600).addClass('animated bounceInDown');});
-        
+        $(".ball").fadeIn(1200).addClass('animated bounceInDown');
+        $(".circle-div").slideUp(600);
         setTimeout(function () {
             $(".b-slide").removeClass("invisible").addClass('animated rollIn').animate({ height: "+=90px" }, 600).animate({ height: "-=90px" }, 600);
         }, 1000);
         setTimeout(function () { $(".b-slide").trigger("click"); }, 2000);
-        // setTimeout(function () {
-        //     $("#welcome-section").addClass('animated fadeOutRight');
-        // }, 4000);
-
+        setTimeout(function () {
+            $("#welcome-section").addClass('animated fadeOutRight').slideUp(1200);
+            $("#spacer").slideUp();
+            // $("#main").addClass("vue-wrapper");
+        }, 4000);
+        
     });
 }
 
