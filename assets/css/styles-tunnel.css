@@ -15,41 +15,42 @@
  :root {
      --color-border: black;
      --text-color: lightgrey;
-  
      --ball-gradient-lt: hsl(300, 40%, 33%);
      --ball-gradient-dk: hsl(0, 10%, 20%);
      --ball-shadow: hsl(180, 15%, 26%);
      --color-footer: hsl(40, 6%, 91%);
      --font-size: 18px;
-    --text-color-neutral:lightgrey;
+     --text-color-neutral: lightgrey;
      --text-color-dark: #17a7ac;
      --color-header: transparent;
      --font-playful: 'Gochi Hand';
      --font-cursive: 'Caveat';
      --font-choppy: 'Short Stack';
-     --purple-glass:	hsla(257, 24%, 47%, 0.32);
-     --purple-glass-active:hsla(175, 56%, 68%, 0.32);
-     --text-color-light:  rgb(132, 190, 207);
+     --purple-glass: hsla(257, 24%, 47%, 0.32);
+     --purple-glass-active: hsla(175, 56%, 68%, 0.32);
+     --text-color-light: rgb(132, 190, 207);
      --text-color-dark: rgb(4, 28, 63);
      --text-color-bright-yl: rgb(203, 223, 116);
      --text-color-bright-org: rgb(190, 112, 81);
      --text-color-troll: rgb(2, 119, 84);
-     --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
-
- }
+     --default-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     --background1-fallback: hsl(243, 31%, 62% );
+     --background1: hsl(193, 30%, 80%,1 );
+    --background2 : hsl(189, 24%, 78%,1 );
+    --background3: hsl(332, 22%, 76%, 1 );
+ 
+    }
 
  html {
      box-sizing: border-box;
-     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+64,207cca+72,7db9e8+100 */
-     background: rgb(30, 87, 153);
-     /* Old browsers */
-     background: -moz-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 64%, rgba(32, 124, 202, 1) 72%, rgba(125, 185, 232, 1) 100%);
-     /* FF3.6-15 */
-     background: -webkit-linear-gradient(top, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 64%, rgba(32, 124, 202, 1) 72%, rgba(125, 185, 232, 1) 100%);
-     /* Chrome10-25,Safari5.1-6 */
-     background: linear-gradient(to bottom, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 64%, rgba(32, 124, 202, 1) 72%, rgba(125, 185, 232, 1) 100%);
-     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-     background-attachment: fixed;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#706da0+0,90c0ce+63,97c1c9+67,c497ac+100 */
+background: #706da0; /* Old browsers */
+background: -moz-linear-gradient(top, #706da0 0%, #90c0ce 63%, #97c1c9 67%, #c497ac 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #706da0 0%,#90c0ce 63%,#97c1c9 67%,#c497ac 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #706da0 0%,#90c0ce 63%,#97c1c9 67%,#c497ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#706da0', endColorstr='#c497ac',GradientType=0 ); /* IE6-9 */
+     
+     background-attachment: fixed;  
      height: 100%;
  }
 
@@ -58,65 +59,71 @@
  }
 
  body {
-     margin-top: 0px;
-     margin-bottom: 0px;
+    
      font-size: var(--font-size);
      color: var(--text-color-neutral);
      /* height: 10000px; */
      width: 100%;
-     font-family: var(--font-choppy), var(--font-playful),  var(--default-font);
+     margin-top:-5px;
+     font-family: var(--font-choppy), var(--font-playful), var(--default-font);
      transition: background-color .5s ease-in-out;
      -moz-transition: background-color .5s ease-in-out;
-     -webkit-transition: background-color .5s ease-in-out; 
-    -o-transition: background-color .5s ease-in-out; 
+     -webkit-transition: background-color .5s ease-in-out;
+     -o-transition: background-color .5s ease-in-out;
  }
-/*>>>>>>>>>>>>>>>>>>> helper classes  >>>>>>>>>>>>>>>>>>>>>>>>>*/
-.position-fixed {
-    position: fixed;
-}
-.position-unfixed {
-    position: relative;
-}
-.invisible{
-    visibility:hidden;
-}
-.visible{
-    visibility: visible;
-}
-.black-all{
-   background-color:  rgb( 0 ,0,0);
-}
 
+ /*>>>>>>>>>>>>>>>>>>> helper classes  >>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-/* related animation css plugin */
-.animated {
-    -webkit-animation-duration: 2s;
-    animation-duration: 2s;
-    /* visibility:visible; */
-}
+ .position-fixed {
+     position: fixed;
+ }
 
+ .position-unfixed {
+     position: relative;
+ }
 
-/* ********************* slider  **********************************/
+ .invisible {
+     visibility: hidden;
+ }
+
+ .visible {
+     visibility: visible;
+ }
+
+ .black-all {
+     background-color: rgb( 0, 0, 0);
+ }
+
+ /* related animation css plugin */
+
+ .animated {
+     -webkit-animation-duration: 2s;
+     animation-duration: 2s;
+     /* visibility:visible; */
+ }
+
+ /* ********************* slider  **********************************/
 
  /* this is the nav slider */
- #slider-wrapper{
-    width:100%;
-    margin-left:20%;
-}
+
+ #slider-wrapper {
+     width: 93%;
+     margin-left: 7%;
+     margin-top:5px;
+ }
+
  .slide {
      position: relative;
      overflow: hidden;
-     width: 80%;
+     width: 100%;
      margin-top: .3%;
  }
 
  .slide .inner {
      position: absolute;
-     left: 20%;
+     left: 13%;
      top: 0;
-     width: 80%;
-     /* margin-left: 3%; */
-     /* background-color: pink; */
+     width: 100%;
  }
 
  .js .slide .inner {
@@ -133,6 +140,8 @@
      min-width: 2.5%;
      transition: background-color 0.5s, color 0.8s, transform 0.5s;
      padding-top: 10px;
+     min-width:120px;
+     margin: 0 5px;
      z-index: 2;
  }
 
@@ -166,15 +175,15 @@
      color: var(--text-color-neutral);
      font-family: var(--font-choppy), var(--default-font);
      transition: background-color 0.5s, color 0.8s, transform 0.5s;
-      background-color:  transparent;/*rgba(19, 227, 241, 0.733); */
+     background-color: transparent;
+     /*rgba(19, 227, 241, 0.733); */
      /* margin-top: 1%; */
-     margin-right:5px;
+     margin-right: 5px;
      z-index: 4;
-     
  }
 
  .b-slide:hover {
-     background-color: 	hsla(257, 24%, 47%, 0.32);
+     background-color: hsla(257, 24%, 47%, 0.32);
      color: white;
      transform: scale(1.1) translate(1px, 1px);
  }
@@ -187,24 +196,27 @@
  .b-slide:focus {
      outline: 0;
  }
- .selected-action{
-    /* background-color: var(--purple-glass-active); */
-    color: #ffffff;
-   
+
+ .selected-action {
+     /* background-color: var(--purple-glass-active); */
+     color: #ffffff;
  }
+
  /* <<<<<<<<<<<<<<<<<<<<<<<<<  slider >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-/******************************* welcome text area ****************** */
+ /******************************* welcome text area ****************** */
+
  #welcome-text {
      min-width: 65%;
-     min-height:  80px;
+     min-height: 80px;
      margin: 0 auto;
      /* margin-top: 5%; */
      /* background-color: #4d9da0; */
-     z-index:3;
+     z-index: 3;
  }
+
  .lets-text {
-     font-family: var(--font-cursive),var(--default-font);
+     font-family: var(--font-cursive), var(--default-font);
      font-size: 8em;
      min-width: 65%;
      letter-spacing: 0.1em;
@@ -213,59 +225,42 @@
      display: flex;
      padding-left: 17%;
      padding-top: 3%;
-   
      /* padding-bottom: 10px; */
  }
+
  #lets-div {
      text-align: right;
      margin-right: 1em;
      font-size: 0.3em;
      font-family: var(--font-choppy), var(--font-choppy), var(--default-font);
-     bottom:50%;  
-    }
-      
-      /* for scroll animation */
- #spacer {
-    width:20%;
-    height: 80vh;
+     bottom: 50%;
  }
-/***************** end welcome text area***************************** */
 
+ /* for scroll animation */
 
+ #spacer {
+     width: 20%;
+     height: 85vh;
+ }
+
+ /***************** end welcome text area***************************** */
 
  #circle {
      width: 400px;
      height: 400px;
      border-radius: 50%;
-     background-color: var(--text-color);
+     background-color: var(--background1-fallback);
      border: 8px;
      border-color: var(--color-border);
      margin: 0 auto;
      margin-top: 5%;
  }
- .circle-div {
-    width: 100%;
-    min-height: 300px;
-    display: none;
-    /* background-color: hsl(34, 50%, 50%);  */
-}
-#jball-wrapper{
-    width: 70%;
-    min-height: 600px;
-    float:right;
-    position:relative;
-     background-color: #4d9da0; 
-}
-/* #jball-wrapper #jball{
-    position: absolute;
-    left:10.5%;
-    right:0;
-    top:24%;
-    bottom:0;
-    margin:0;
-     
-} */
 
+ .circle-div {
+     width: 100%;
+     min-height: 300px;
+     display: none;
+ }
 
  .ball {
      display: inline-block;
@@ -276,13 +271,13 @@
      margin: 0 auto;
      background: radial-gradient(circle at 50% 120%, var(--ball-gradient-lt), var(--ball-gradient-lt) 80%, var(--ball-gradient-lt) 90%);
      z-index: 2;
-      background-color:green;
+     background-color: green;
      transition: background-color .5s ease-in-out;
      transition: width 1s ease-in-out;
      transition: height 1s ease-in-out;
      -moz-transition: background-color .5s ease-in-out;
-     -webkit-transition: background-color .5s ease-in-out; 
-    -o-transition: background-color .5s ease-in-out; 
+     -webkit-transition: background-color .5s ease-in-out;
+     -o-transition: background-color .5s ease-in-out;
  }
 
  .ball:before {
@@ -321,38 +316,16 @@
      z-index: 1;
  }
 
-
-
-
- #tall-slider{
-    clear:both;
-    display: block;
-    width:50%;
-    background-color: #4d9da0;
+ #tall-slider {
+     clear: both;
+     display: block;
+     width: 50%;
+     background-color: #4d9da0;
  }
+
  .invisible {
      opacity: 0;
  }
- /* .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-   /* {
-    opacity: 0;
-  } */ 
-
- /* 
-[data-aos="circle"] {
-    animation-delay: 2s;
-    transform:translate(20px,20px); 
-    opacity:0;
-}
-[data-aos="circle"].aos-animate {
-    animation-delay: 2s; 
-     transform:translate(0px,0px);
-    opacity:1;
-} */
-
 
  @keyframes fade-in-right {
      from {
@@ -384,17 +357,18 @@
          transform: scaleX(1);
      }
  }
- @keyframes shrink-ball {
-    from {
-        transform: scaleX(1);
-    }
-    to {
-        transform: scaleX(0);
-    }
-}
 
-.shrink {
-     transition: width 1s, height 1s; 
+ @keyframes shrink-ball {
+     from {
+         transform: scaleX(1);
+     }
+     to {
+         transform: scaleX(0);
+     }
+ }
+
+ .shrink {
+     transition: width 1s, height 1s;
  }
 
  .t-circle-left {
@@ -432,112 +406,116 @@
 
  /* <<<<<<<<<<<<<<<<<<<<<<<<< Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
- #scroller-wrapper{
-    width:20%;
-    z-index: -1;
+ #scroller-wrapper {
+     width: 20%;
+     z-index: -1;
  }
- #vue-wrapper{
-    width:75%;
-    left:30%;
-    float:right;
 
+ #vue-wrapper {
+     width: 80%;
+     left: 25%;
+     float: right;
  }
+
  #app {
      position: relative;
      width: 100%;
      height: 70vh;
-   
  }
 
-
  #controls-panel2 {
-
      color: hsl(0, 0%, 100%);
      width: 28%;
      height: 100%;
      float: right;
-     margin-right:4%;
-     margin-top:1%;
+     margin-right: 6%;
+     margin-top: 6%;
      padding: 1%;
-     display:flex;
+     display: flex;
      flex-direction: column;
      justify-content: space-around;
-     
  }
- .mini-panel, .mini-panel2{
-    background-color: var(--purple-glass);
-    border: 2px solid #17a7ac;
+
+ .mini-panel, .mini-panel2 {
+     background-color: var(--purple-glass);
+     border: 2px solid #17a7ac;
      color: var(--text-color);
      text-align: center;
-     padding:5%;
+     padding: 5%;
+     margin-right: 20px;
      font-size: 1.2em;
      /* width:100%; */
-     min-height:80px;
-     min-width:150px;
+     min-height: 80px;
+     /* min-width: 100px; */
  }
- .mini-panel:hover, .mini-panel2:hover{
+
+ .mini-panel:hover, .mini-panel2:hover {
      transform: scale(1.1) translate(1px, 1px);
  }
- label, input{
-    background-color: transparent;
-    color:inherit;
-    width:100%;
-    min-height: 20px;
-    border:none;
-    font-size: 1em;
-    text-align: center;
-    margin-top: 5%;
-}
+
+ label, input {
+     background-color: transparent;
+     color: inherit;
+     width: 100%;
+     min-height: 20px;
+     border: none;
+     font-size: 1em;
+     text-align: center;
+     margin-top: 5%;
+ }
 
  #stage {
      width: 600px;
      height: 600px;
-     position:relative;
+     position: relative;
  }
- #pictroll{
-    width: 600px;
-    height: 600px;
-    position: absolute;
-    pointer-events: none;
-    margin: 0 auto;
-    z-index:7;
-}
-#stage .ball{
-    position: absolute;
-    margin: 0 auto;
-    top:24.5%;
-    left:15.5%;
-}
- 
+
+ #pictroll {
+     width: 600px;
+     height: 600px;
+     position: absolute;
+     pointer-events: none;
+     margin: 0 auto;
+     z-index: 7;
+ }
+
+ #stage .ball {
+     position: absolute;
+     margin: 0 auto;
+     top: 24.5%;
+     left: 15.5%;
+ }
+
  /* <<<<<<<<<<<<<<<<<<<<<<<<< end Vue Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-h4 {
-    font-family: var(--font-cursive),var(--default-font);
-    font-size: 3em;
-    font-weight: 300;
-    background-color: rgba(107, 91, 149, 0.315);
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
-}
+ h4 {
+     font-family: var(--font-cursive), var(--default-font);
+     font-size: 3em;
+     font-weight: 300;
+     background-color: rgba(107, 91, 149, 0.315);
+     width: 100%;
+     text-align: center;
+     margin: 0 auto;
+ }
 
  .action-call-text {
      padding-left: 10%;
      font-family: var(--playful), var(--default-font);
      font-size: 2em;
-     margin-bottom:5%;
+     margin-bottom: 5%;
+     margin-left:5%;
      padding: 30px 10px;
-     z-index:10;
+     z-index: 10;
  }
 
  .shortstreach {
-     font-style: var(--cursive),var(--default-font);
+     font-style: var(--cursive), var(--default-font);
      font-size: 1.8em;
      letter-spacing: 0.02em;
  }
 
  .blackish-bold {
-     font-style: var(--choppy),var(--default-font);
+     font-style: var(--choppy), var(--default-font);
      font-weight: bold;
      font-size: 2.5em;
  }
@@ -562,8 +540,6 @@ h4 {
      font-size: 1em;
  }
 
- .position-fixed{
-    position:fixed;
+ .position-fixed {
+     position: fixed;
  }
-
-

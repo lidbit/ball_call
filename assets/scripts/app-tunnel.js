@@ -17,7 +17,7 @@ $(document).ready(function () {
     initVue();
     initSlider();
     animateWelcome(); 
-    scrollReady();
+    
 });
 
 //initialising document
@@ -27,10 +27,9 @@ function initVue() {
         circleRadius: 800,
         radiusNumber: 400,
         sizeNumber: 400,
-        satNumber: 50,
-        hueNumber: 300,
-        lightNumber: 50,
-       
+        hueNumber: 299,
+        satNumber: 55,
+        lightNumber: 77
     };
     //new vue 
     new Vue({
@@ -111,19 +110,14 @@ function animateWelcome() {
         setTimeout(function () { $(".b-slide").trigger("click"); }, 2000);
         setTimeout(function () {
             $("#welcome-section").addClass('animated fadeOutRight').slideUp(1200);
-            // $("#spacer").slideUp();
-            // $("#main").addClass("vue-wrapper");
+            
         }, 4000);
-        
+        scrollReady();
     });
+    
 }
 
 function scrollReady(){
-
          $("#vue-wrapper").addClass("position-fixed");
-        // $(".control-panel2").addClass("position-fixed");
-        // $(".b-slider").addClass("position-fixed");
-        // $(".helper").addClass("position-fixed");
-  
 }
 
